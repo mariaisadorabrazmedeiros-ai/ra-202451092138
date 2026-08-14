@@ -15,7 +15,7 @@ Duas páginas podem ser idênticas na tela e completamente diferentes por dentro
 
 **⏱️ Tempo:** 40 minutos     **👥 Formato:** individual, conferindo cada rodada com o colega ao lado
 
-> **Nome:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nome:** Maria Isadora Braz Medeiros   **Turma:** 3001   **Data:** 14 / 08 / 2026
 
 ## RODADA 01 — Div soup × semântico
 
@@ -37,9 +37,15 @@ Os dois trechos abaixo produzem exatamente a mesma tela. Um deles não diz nada 
 
 1. As duas páginas renderizam igual. O que exatamente a página B tem que a A não tem?
 
+A página B possui significado semântico. Os elementos indicam a função de cada área da página, facilitando a interpretação por navegadores e mecanismos de busca.
+
 2. Escolha UMA das div acima e explique como você decidiu qual elemento a substitui.
 
+A div com classe "menu" seria substituída por <nav> porque contém os links de navegação principal do site.
+
 3. Sobrou algum caso em que o div é a escolha certa? Quando?
+
+Sim, quando o elemento serve apenas para agrupamento visual ou estilização via CSS, sem possuir significado semântico específico.
 
 ## RODADA 02 — O mapa da página
 
@@ -49,23 +55,32 @@ Desenhe no retângulo abaixo onde ficam as grandes regiões da página que você
 
 ```text
 +--------------------------------------------------+
-|                                                  |
-|                                                  |
-|                                                  |
-|                                                  |
-|                                                  |
-|                                                  |
+|                       header                     |
 +--------------------------------------------------+
-  site investigado: ______________________________
+|                       nav                        |
++--------------------------------------------------+
+|                       main                       |
+|        article            |        aside         |
+|                           |                      |
++--------------------------------------------------+
+|                      footer                      |
++--------------------------------------------------+
+  site investigado: g1.globo.com
 ```
 
 **Sua análise:**
 
 1. Quantas regiões você conseguiu identificar sem abrir os nós filhos?
 
+Cinco regiões principais: header, nav, main, aside e footer.
+
 2. O site usa elementos semânticos ou div com class? Anote dois nomes de class que você viu.
 
+Usa ambos, menu e header.
+
 3. Existe mais de um `<main>` na página? Deveria existir?
+
+Não, deve existir apenas um <main> por página, pois ele representa o conteúdo principal.
 
 ## RODADA 03 — A hierarquia dos títulos
 
@@ -76,20 +91,26 @@ Esse comando lista os títulos na ordem em que aparecem no código. Anote os pri
 ```text
 ordem   tag    texto do titulo
 -----   ----   ------------------------------------
-  1     ____   ____________________________________
-  2     ____   ____________________________________
-  3     ____   ____________________________________
-  4     ____   ____________________________________
-  5     ____   ____________________________________
+  1     H1   G1 - Últimas notícias do Brasil
+  2     H2   Destaques
+  3     H3   Política
+  4     H4   Economia
+  5     H5   Leia também
 ```
 
 **Sua análise:**
 
 1. Quantos h1 a página tem? Se tem mais de um, qual seria o problema disso?
 
+Possui apenas um H1, ter vários H1 pode dificultar a compreensão da estrutura da página por leitores de tela e para a busca.
+
 2. Algum nível foi pulado (um h2 seguido direto de um h4)? Anote onde.
 
+Não foi identificado salto de níveis no exemplo analisado.
+
 3. Lendo só os títulos, você entende de que a página trata? Se não, o que está faltando?
+
+Sim, os títulos deixam claro que a página reúne notícias e as organiza por temas.
 
 ## RODADA 04 — O alt que ninguém lê (mas alguém ouve)
 
@@ -98,23 +119,29 @@ ordem   tag    texto do titulo
 Um leitor de tela lê o alt em voz alta no lugar da imagem. Anote os três primeiros e classifique cada um:
 
 ```text
-img 1  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+img 1  alt = Logotipo do G1
+       ( x ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
 
-img 2  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+img 2  alt = Foto do Congresso Nacional
+       ( x ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
 
-img 3  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+img 3  alt = SEM ALT
+       ( ) descritivo  ( ) inutil  ( x ) ausente  ( ) vazio proposital
 ```
 
 **Sua análise:**
 
 1. Algum alt era só o nome do arquivo ("banner-2024-final.jpg")? Por que isso é inútil?
 
+Não, isso seria inútil porque não descreve o conteúdo da imagem para quem utiliza leitor de tela.
+
 2. Feche os olhos e imagine ouvir a página. O que você perderia com esses alt?
 
+A imagem sem alt deixaria de transmitir qualquer informação visual importante ao usuário.
+
 3. Reescreva o pior dos três de forma que descreva a imagem em menos de 12 palavras.
+
+Prédio do Congresso Nacional em Brasília.
 
 ## RODADA 05 — O link fora de contexto
 
@@ -123,18 +150,24 @@ img 3  alt = _______________________________________
 Leitores de tela permitem navegar por uma lista só de links, sem o texto ao redor. Anote 3 textos de link e teste se sobrevivem sozinhos:
 
 ```text
-link 1: "____________________"  faz sentido sozinho? ( )sim ( )nao
-link 2: "____________________"  faz sentido sozinho? ( )sim ( )nao
-link 3: "____________________"  faz sentido sozinho? ( )sim ( )nao
+link 1: "Política"  faz sentido sozinho? ( x )sim ( )nao
+link 2: "Economia"  faz sentido sozinho? ( x )sim ( )nao
+link 3: "Saiba mais"  faz sentido sozinho? ( )sim ( x )nao
 ```
 
 **Sua análise:**
 
 1. Você encontrou algum "clique aqui", "saiba mais" ou "leia"? Para onde ele levava?
 
+Sim, "Saiba mais" levava para uma notícia relacionada ao assunto apresentado.
+
 2. Reescreva um desses textos para que ele diga o destino sem depender da frase ao redor.
 
+"Saiba mais sobre a reforma tributária".
+
 3. Algum link abria em nova aba? Como você descobriu isso olhando o código?
+
+Não foi possível identificar.
 
 ## 🏆 DESAFIO BÔNUS
 

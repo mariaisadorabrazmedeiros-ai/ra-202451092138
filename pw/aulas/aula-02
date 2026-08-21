@@ -168,11 +168,3 @@ Sim, "Saiba mais" levava para uma notícia relacionada ao assunto apresentado.
 3. Algum link abria em nova aba? Como você descobriu isso olhando o código?
 
 Não foi possível identificar.
-
-## 🏆 DESAFIO BÔNUS
-
-Terminou antes do tempo? Escolha um destes:
-
-- Rode a auditoria Accessibility do Lighthouse (DevTools → Lighthouse) no site que você investigou. Qual foi a nota e qual o primeiro problema apontado?
-- Procure na página um texto que PARECE título (grande e em negrito) mas não é um h. Como você confirmou?
-- Encontre um site que use `<table>` para fazer layout em vez de dados tabulares. Por que isso é um problema de acessibilidade?

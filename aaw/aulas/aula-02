@@ -16,7 +16,7 @@ Ao final, preencham juntos a TABELA-SÍNTESE dos verbos na última página.
 
 *⏱️ Tempo: 30 minutos  |  👥 Formato: em duplas  |  Dica: o card 6 esconde uma pegadinha de quem é a culpa.*
 
-> **Nomes:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nomes:** Maria Isadora Braz Medeiros   **Turma:** 3001   **Data:** 13 / 08 / 2026
 
 ## REQUISIÇÃO 01 — A prateleira inteira
 
@@ -40,9 +40,19 @@ Content-Type: application/json
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+O cliente usou o verbo GET para consultar a coleção de livros disponível no recurso:
+/api/livros
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+200 ok, informa que a requisição foi recebida e processada corretamente e o recurso foi encontrado.
+
 3. Repetindo esta requisição 3 vezes seguidas, o estado do servidor muda? E a resposta?
+
+Resposta:
+Repetir o GET três vezes não deve modificar o estado do servidor, pois GET é um método seguro.
 
 ## REQUISIÇÃO 02 — O livro fantasma
 
@@ -65,9 +75,19 @@ Content-Type: application/problem+json
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+O cliente usou o verbo GET para consultar um livro específico, identificado pelo ID 99, no recurso:
+/api/livros/99
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+O status 404 Not Found informa que o servidor foi encontrado e entendeu a requisição, mas não encontrou o recurso solicitado.
+
 3. Repetindo esta requisição 3 vezes seguidas, o estado do servidor muda? E a resposta?
+
+Resposta:
+Repetir o GET três vezes não altera o servidor.
 
 ## REQUISIÇÃO 03 — Livro novo na estante
 
@@ -93,9 +113,19 @@ Content-Type: application/json
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+Ele pediu ao servidor que criasse um novo livro com os dados enviados no corpo da requisição.
+/api/livros
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+201 Created, informa que a requisição foi processada com sucesso e um novo recurso foi criado.
+
 3. Enviando este POST 3 vezes seguidas, o que acontece na estante? Para que serve o header Location?
+
+Resposta:
+Normalmente, cada POST cria um novo recurso.
 
 ## REQUISIÇÃO 04 — Corrigindo a ficha completa
 
@@ -120,9 +150,19 @@ Content-Type: application/json
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+O cliente usou o verbo PUT para substituir ou atualizar completamente a representação do livro de ID 7, localizado em:
+/api/livros/7
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+O status 200 OK informa que a requisição foi compreendida e o livro foi encontrado.
+
 3. Repetindo esta requisição 3 vezes seguidas, o estado do servidor muda? E a resposta?
+
+Resposta:
+Na primeira execução, o livro passa a possuir exatamente os valores enviados.
 
 ## REQUISIÇÃO 05 — Fora do catálogo
 
@@ -141,9 +181,19 @@ HTTP/1.1 204 No Content
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+O cliente usou o verbo DELETE para remover o livro de ID 7, localizado no recurso:
+/api/livros/7
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+O status 204 No Content informa que a requisição foi processada com sucesso o servidor não enviará conteúdo no corpo da resposta.
+
 3. Repetindo o DELETE, o estado do servidor muda? Que resposta você ESPERA na segunda vez?
+
+Resposta:
+Na primeira execução, o livro é removido.
 
 ## REQUISIÇÃO 06 — O cadastro capenga
 
@@ -169,9 +219,19 @@ Content-Type: application/problem+json
 
 1. O que o cliente pediu (verbo + recurso)?
 
+Resposta:
+O cliente usou o verbo POST para tentar criar um novo livro na coleção:
+/api/livros
+
 2. O que o status code informa? Deu certo? Culpa de quem se não deu?
 
+Resposta:
+O status 400 Bad Request informa que o servidor não pode processar a criação porque existe um problema na requisição enviada.
+
 3. Repetindo esta requisição 3 vezes seguidas, o estado do servidor muda? E a resposta?
+
+Resposta:
+Repetir exatamente a mesma requisição três vezes não deverá criar nenhum livro, pois todas as tentativas possuem o mesmo campo obrigatório ausente.
 
 ## TABELA-SÍNTESE — Os verbos do HTTP
 
@@ -179,12 +239,8 @@ Content-Type: application/problem+json
 
 | **Verbo** | **Para que serve** | **Seguro?** | **Idempotente?** | **Status típicos** |
 | --- | --- | --- | --- | --- |
-| **`GET`** |  |  |  |  |
-| **`POST`** |  |  |  |  |
-| **`PUT`** |  |  |  |  |
-| **`PATCH`** |  |  |  |  |
-| **`DELETE`** |  |  |  |  |
-
-## DESAFIO
-
-1. O verbo PATCH não apareceu em nenhum card. Qual a diferença entre PATCH e PUT? Um app de banco quer alterar SÓ o apelido do usuário, entre dezenas de campos do perfil — qual dos dois você usaria e por quê?
+| **`GET`** |Consultar um recurso ou uma coleção|Sim|Sim|200, 304, 400, 404|
+| **`POST`** |Criar recursos ou solicitar o processamento de uma ação|Não|Não, normalmente|200, 201, 202, 400, 409|
+| **`PUT`** |Substituir completamente um recurso em uma URI conhecida|Não|Sim|200, 201, 204, 400, 404|
+| **`PATCH`** |Alterar parcialmente um recurso|Não|Não necessariamente|200, 204, 400, 404, 409|
+| **`DELETE`** |Remover um recurso|Não|Sim|200, 202, 204, 404, 409|

@@ -24,19 +24,25 @@ Você vai testar formulários reais como um usuário desastrado e depois como al
 Cada campo de formulário é uma tag input com atributos que decidem tudo. Catalogue três campos do formulário que você escolheu:
 
 ```text
-campo   type=____________  name=____________
-  1     id=______________  required? ( )sim ( )nao
+campo   type= text  name= nome
+  1     id= C1  required? ( )sim (x)nao
 
-campo   type=____________  name=____________
-  2     id=______________  required? ( )sim ( )nao
+campo   type= text  name= email
+  2     id= C2  required? ( )sim (x)nao
 
-campo   type=____________  name=____________
-  3     id=______________  required? ( )sim ( )nao
+campo   type= text  name= telefone
+  3     id= C3  required? ( )sim (x)nao
 ```
 
 **Sua análise:**
 
 1. Os atributos name e id têm o mesmo valor nos campos que você viu? Eles servem para a mesma coisa?
+
+Resposta:
+Não tem, os 3 servem para coisas diferentes.
+type="nome": texto para nome completo.
+type="email": endereço de e-mail.
+type="tel": número de telefone.
 
 2. Algum campo usa placeholder em vez de um rótulo visível? Qual o problema disso?
 

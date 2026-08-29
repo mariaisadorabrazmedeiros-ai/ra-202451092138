@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pets para Adoção - Encontre seu novo melhor amigo.</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, Segoe UI, Arial, sans-serif;
+      color: #1e293b;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+    .topo, header { background: #713600; color: #fff; padding: 24px 32px 16px; }
+    .titulo-site, .site-nome { font-size: 26px; font-weight: 700; margin: 0 0 4px; }
+    .subtitulo-site { font-size: 14px; color: #f7f7f7; margin: 0; }
+    .menu, nav { background: #fdfbd4; padding: 10px 32px; }
+    .menu a, nav a { color: #020202; text-decoration: none; margin-right: 20px; font-size: 14px; }
+    .menu a:hover, nav a:hover { text-decoration: underline; }
+    .conteudo { display: flex; gap: 24px; padding: 28px 32px; align-items: flex-start; }
+    .miolo, main { flex: 1 1 auto; }
+    .lateral, aside {
+      flex: 0 0 250px; background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 6px; padding: 16px 20px;
+    }
+    .post, article {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 6px;
+      padding: 20px 24px; margin-bottom: 20px;
+    }
+    .titulo-g, h1 { font-size: 24px; font-weight: 700; color: #c05800; margin: 0 0 12px; }
+    .titulo-m, h2 { font-size: 19px; font-weight: 700; color: #1f3864; margin: 0 0 10px; }
+    .titulo-p, h3 { font-size: 15px; font-weight: 700; color: #2e75b6; margin: 0 0 6px; }
+    .texto, p { margin: 0 0 12px; }
+    .lista, ul { margin: 0 0 12px; padding-left: 22px; }
+    .rodape, footer {
+      background: #38240D; color: #ffffff; padding: 18px 32px;
+      font-size: 13px; text-align: center;
+    }
+    .selo { display: inline-block; background: #eef3fa; color: #1f3864;
+      border-radius: 4px; padding: 2px 8px; font-size: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
 
+  <header>
+    <p class="site-nome">Pets para Adoção - Encontre seu novo melhor amigo.</p>
+    <p class="subtitulo-site">Cães e gatos resgatados esperando por uma família,cada pet tem uma história e 
+     espera pela oportunidade de fazer parte de uma família.</p>
+  </header>
+
+  <nav>
+    <a href="#como-ajudar">Como Ajudar?</a>
+    <a href="#FAQ">FAQ</a>
+    <a href="#sobre-o-site">Sobre o Site</a>
+  </nav>
+
+  <div class="como-ajudar">
+    <main>
+
+      <article>
+        <h1>Como Ajudar?</h1>
+        <p><h1>Toda ajuda pode transformar uma vida</h1></p>
+        <p>Existem diversas maneiras de contribuir para que cães e gatos encontrem um lar seguro e recebam os cuidados necessários. Mesmo que você não possa adotar neste momento, ainda pode fazer a diferença.</p>
+        
+        <p><h1>Adote com responsabilidade</h1></p>
+        <p>Ao adotar, você oferece uma nova oportunidade para um animal que precisa de carinho, proteção e segurança. 
+        <p>Antes de tomar essa decisão, avalie se você possui tempo, espaço e condições para cuidar do pet durante toda a vida dele.</p> 
+        <p>Adotar é um compromisso baseado em amor, cuidado e responsabilidade.</p>
+
+        </p>
+         
+        <p><h1>Ofereça um lar temporário</h1></p>
+        <p>O lar temporário acolhe o animal por um período determinado, enquanto ele aguarda uma família definitiva.</p> 
+        <p>ajuda proporciona mais segurança, conforto e atenção ao pet durante o processo de adoção.</p>
+
+        <p><h1>Faça uma doação</h1></p>
+        <p>As doações podem ajudar na compra de:</p>
+         <ul>
+          <li>Ração</li>
+          <li>Medicamentos</li>
+          <li>Vacinas</li>
+          <li>Produtos de higiene</li>
+          <li>Cobertores e caminhas</li>
+          <li>Coleiras e guias</li>
+          <li>Materiais para limpeza</li>
+          <li>Consultas e procedimentos veterinários</li>
+         </ul>
+        <p>Antes de realizar uma doação, entre em contato com os responsáveis pelo projeto para conhecer as necessidades atuais e os canais oficiais de contribuição.</p> 
+        <p><strong>Contato:</strong> mariaisadorabrazmedeiros@gmail.com</p>
+        <p><strong>Endereço:</strong> XPTO,999 - Bairro: São Francisco - Belo Horizonte/MG</p>
+        <p><strong>Horário:</strong> Seg a sex, 9h às 17h</p>
+        
+        <p><h1>Seja voluntário</h1></p>
+        <p>Você também pode colaborar oferecendo seu tempo e suas habilidades. Os voluntários podem ajudar em atividades como:</p>
+        <ul>
+          <li>Divulgação dos animais</li>
+          <li>Produção de fotos e vídeos</li>
+          <li>Transporte dos pets</li>
+          <li>Organização de campanhas</li>
+          <li>Participação em eventos de adoção</li>
+          <li>Arrecadação de alimentos e materiais</li>
+          <li>Apoio nos cuidados diários</li>
+         </ul>
+
+        <p><h1>Compartilhe</h1></p>
+        <p>Divulgar os perfis dos animais disponíveis aumenta as chances de adoção. Compartilhe o site e as publicações do projeto com amigos, familiares e em suas redes sociais.</p>
+        <p>Um simples compartilhamento pode ajudar um pet a encontrar uma família.</p>
+
+      </article>
+
+      <div class="FAQ">
+    <main>
+
+      <article>
+       <h1>FAQ</h1>
+       <p><h1>Perguntas frequentes</h1></p>
+       <p>Encontre respostas para as principais dúvidas sobre adoção, cuidados e funcionamento do site.</p>
+
+       <p><h1>Como posso adotar um animal?</h1></p>
+       <p>Acesse a página de animais disponíveis, escolha o pet que deseja conhecer e entre em contato por meio do canal informado em seu perfil. Os responsáveis explicarão todas as etapas do processo de adoção.</p>
+       
+       <p><h1>Quais são os requisitos para adotar?</h1></p>
+       <p> requisitos podem variar de acordo com os responsáveis pelo animal. Geralmente, o interessado deve ser maior de idade, apresentar documento de identificação, informar onde o pet viverá e demonstrar que possui condições para oferecer alimentação, cuidados veterinários, segurança e atenção.</p>
+
+       <p><h1>A adoção é gratuita?</h1></p>
+       <p>Normalmente, a adoção não envolve a compra do animal. Porém, o adotante deve estar preparado para assumir os custos relacionados à alimentação, vacinação, higiene, consultas veterinárias e demais cuidados necessários.</p>
+
+       <p><h1>Posso conhecer o pet antes de adotar?</h1></p>
+       <p>Sim. Sempre que possível, é importante conhecer o animal antes de concluir a adoção. Esse encontro ajuda a entender seu comportamento, suas necessidades e sua adaptação à família.</p>
+
+       <p><h1>Os animais são vacinados e castrados?</h1></p>
+       <p>Essa informação pode variar de acordo com cada pet. Consulte o perfil do animal ou entre em contato com os responsáveis para verificar as vacinas, a castração, a vermifugação e outras informações de saúde.</p>
+
+       <p><h1>Posso adotar se já tenho outros animais?</h1></p>
+       <p>Sim, desde que seja possível realizar uma adaptação segura e gradual. Informe aos responsáveis que você já possui outros animais para receber orientações sobre convivência e apresentação.</p>
+       
+       <p><h1>Posso adotar um animal para outra pessoa?</h1></p>
+       <p>A adoção deve ser realizada pela pessoa que será responsável pelo pet. Animais não devem ser oferecidos como presentes ou surpresas sem que o futuro tutor esteja preparado e de acordo com a adoção.</p>
+
+       <p><h1>O que acontece se eu não puder mais cuidar do animal?</h1></p>
+       <p>Entre em contato com os responsáveis pela adoção antes de entregar o animal a outra pessoa ou abandoná-lo. Eles poderão orientar sobre alternativas seguras e responsáveis.</p>
+
+       <p><h1>A adoção é gratuita?</h1></p>
+       <p>Você pode contribuir divulgando os animais, oferecendo lar temporário, doando materiais, participando de campanhas ou atuando como voluntário.</p>
+
+       <p><h1>Encontrei um animal abandonado. O que devo fazer?</h1></p>
+       <p>Se for seguro, ofereça água e mantenha o animal protegido do trânsito e de outros perigos. Procure atendimento veterinário, organizações de proteção animal ou os serviços responsáveis em sua região. Registre fotos e divulgue o animal para verificar se ele possui uma família.</p>
+
+       <p><h1>As informações dos animais são atualizadas?</h1></p>
+       <p>O site busca manter os perfis atualizados. Porém, um animal pode ser adotado antes da atualização da página. Entre em contato com os responsáveis para confirmar a disponibilidade.</p>
+
+      </article>
+
+      <div class="sobre-o-site">
+    <main>
+
+      <article>
+        <h1>Sobre o Site</h1>
+        <p><h1>Sobre o projeto</h1></p>
+        <p>Este site foi criado para dar visibilidade a cães e gatos que estão à procura de uma família. Nosso objetivo é facilitar o encontro entre animais disponíveis para adoção e pessoas preparadas para oferecer um lar seguro, responsável e cheio de carinho.</p>
+        <p>Cada perfil apresenta informações importantes sobre o pet, como idade aproximada, porte, personalidade, condições de saúde e necessidades especiais.</p>
+
+        <p><h1>Nossa missão</h1></p>
+        <p>Promover a adoção responsável e contribuir para que mais animais tenham acesso a cuidado, proteção e qualidade de vida.</p>
+
+        <p><h1>Nossa visão</h1></p>
+        <p>Ser um espaço confiável e acessível para a divulgação de animais disponíveis para adoção, incentivando atitudes de respeito, responsabilidade e cuidado com os animais.</p>
+
+        <p><h1>Nossos valores</h1></p>
+        <ul>
+          <li><strong>Respeito:</strong> todos os animais merecem cuidado e proteção.</li>
+          <li><strong>Responsabilidade:</strong> adotar é assumir um compromisso para toda a vida.</li>
+          <li><strong>Transparência:</strong> as informações devem ser apresentadas de maneira clara.</li>
+          <li><strong>Empatia: cada animal possui uma história e necessidades específicas.</strong></li>
+          <li><strong>Colaboração:</strong> famílias, voluntários e organizações podem transformar vidas juntos.</li>
+        </ul>
+
+        <p><h1>Como o site funciona?</h1></p>
+        <ul>
+          <li>Os animais disponíveis são cadastrados com fotos e informações.</li>
+          <li>O visitante acessa os perfis e conhece as características de cada pet.</li>
+          <li>Ao encontrar um animal de interesse, o visitante entra em contato com os responsáveis.</li>
+          <li>Os responsáveis avaliam as condições para uma adoção segura.</li>
+          <li>Após a aprovação, o animal é encaminhado para sua nova família.</li>
+        </ul>
+
+        <p><h1>Adoção responsável</h1></p>
+        <p>A adoção deve ser uma decisão consciente. Antes de adotar, é importante considerar os custos, o espaço disponível, o tempo necessário e as possíveis mudanças na rotina da família.</p>
+        <p>Um animal precisa de alimentação adequada, acompanhamento veterinário, higiene, proteção, atenção e carinho durante toda a vida.</p>
+
+        <p><h1>Importante</h1></p>
+        <p>O site atua como um canal de divulgação e aproximação. A responsabilidade pelas informações, entrevistas, visitas, documentos e entrega dos animais pertence aos responsáveis indicados em cada perfil.</p>
+        <p>Recomendamos que todas as etapas sejam realizadas com segurança e transparência. Não envie documentos, valores ou informações pessoais sem verificar a identidade e a legitimidade dos envolvidos.</p>
+
+        <p><h1>Juntos podemos transformar vidas</h1></p>
+        <p>Cada adoção representa uma nova oportunidade. Ao conhecer, divulgar ou adotar um pet, você contribui para a construção de um futuro mais seguro e acolhedor para os animais.</p>
+
+      </article>
+
+  <footer id="contato">
+    Pets para Adoção · Belo Horizonte/MG · Contato: mariaisadorabrazmedeiros@gmail.com
+  </footer>
+
+</body>
+</html>

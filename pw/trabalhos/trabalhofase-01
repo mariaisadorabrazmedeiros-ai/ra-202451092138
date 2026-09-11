@@ -417,6 +417,252 @@
       </ul>
 
     </aside>
+    <section id="adocao">
+
+      <h1>Quero ajudar na adoção</h1>
+
+      <p>
+        Preencha o formulário para demonstrar seu interesse
+        em ajudar os animais.
+      </p>
+
+      <form action="#" method="post">
+
+        <fieldset>
+
+          <legend>Dados para contato</legend>
+
+          <label for="nome">
+            Nome completo
+          </label>
+
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            minlength="3"
+            maxlength="80">
+
+          <label for="email">
+            E-mail
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required>
+
+          <label for="telefone">
+            Telefone
+          </label>
+
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            required
+            minlength="10"
+            maxlength="15">
+
+          <label for="idade">
+            Idade
+          </label>
+
+          <input
+            type="number"
+            id="idade"
+            name="idade"
+            required
+            min="18"
+            max="100">
+
+        </fieldset>
+
+
+        <fieldset>
+
+          <legend>Interesse</legend>
+
+          <label for="tipo-ajuda">
+            Como deseja ajudar?
+          </label>
+
+          <select
+            id="tipo-ajuda"
+            name="tipo-ajuda"
+            required>
+
+            <option value="">
+              Selecione uma opção
+            </option>
+
+            <option value="adocao">
+              Adotar
+            </option>
+
+            <option value="lar-temporario">
+              Lar temporário
+            </option>
+
+            <option value="voluntario">
+              Voluntário
+            </option>
+
+            <option value="doacao">
+              Doação
+            </option>
+
+          </select>
+
+
+          <p>
+            Qual animal você prefere?
+          </p>
+
+          <label>
+
+            <input
+              type="radio"
+              name="animal"
+              value="cao"
+              required>
+
+            Cão
+
+          </label>
+
+          <label>
+
+            <input
+              type="radio"
+              name="animal"
+              value="gato">
+
+            Gato
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="radio"
+              name="animal"
+              value="qualquer">
+
+            Qualquer um
+
+          </label>
+
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="contato"
+              value="whatsapp">
+
+            Aceito receber contato pelo WhatsApp.
+
+          </label>
+
+
+          <label for="mensagem">
+            Mensagem
+          </label>
+
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="5"
+            required
+            minlength="10"
+            maxlength="500">
+          </textarea>
+
+
+        </fieldset>
+
+
+        <button type="submit">
+          Enviar interesse
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <section>
+
+      <h2>Pets disponíveis</h2>
+
+      <table>
+
+        <caption>
+          Animais disponíveis para adoção
+        </caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Pet</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Perfil</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">Mel</th>
+
+            <td>Cão</td>
+
+            <td>2 anos</td>
+
+            <td>Carinhosa e brincalhona</td>
+
+          </tr>
+
+
+          <tr>
+
+            <th scope="row">Theo</th>
+
+            <td>Gato</td>
+
+            <td>1 ano</td>
+
+            <td>Calmo e companheiro</td>
+
+          </tr>
+
+
+          <tr>
+
+            <th scope="row">Luna</th>
+
+            <td>Cão</td>
+
+            <td>4 anos</td>
+
+            <td>Dócil e tranquila</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
 
   </main>
 

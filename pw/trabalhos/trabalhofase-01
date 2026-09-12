@@ -5,25 +5,393 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pets para Adoção - Encontre seu novo melhor amigo.</title>
+  <title>Pets para Adoção - Encontre seu novo melhor amigo</title>
+
+  <style>
+
+    /* ================================
+       RESET
+       ================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, "Segoe UI", Arial, sans-serif;
+      color: #1e293b;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #1f3864;
+    }
+
+
+    /* ================================
+       HEADER
+       ================================= */
+
+    header {
+      background: #713600;
+      color: #fff;
+      padding: 24px 32px 16px;
+    }
+
+    .site-nome {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+
+    .subtitulo-site {
+      font-size: 14px;
+      color: #f7f7f7;
+      margin: 0;
+    }
+
+
+    /* ================================
+       MENU
+       ================================= */
+
+    nav {
+      background: #fdfbd4;
+      padding: 10px 32px;
+    }
+
+    nav a {
+      color: #020202;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+
+    /* ================================
+       LAYOUT
+       ================================= */
+
+    main.conteudo {
+      display: flex;
+      gap: 24px;
+      padding: 28px 32px;
+      align-items: flex-start;
+    }
+
+    .miolo {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    aside {
+      flex: 0 0 250px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+
+
+    /* ================================
+       SEÇÕES
+       ================================= */
+
+    .post {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+
+
+    /* ================================
+       TÍTULOS
+       ================================= */
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #c05800;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 700;
+      color: #1f3864;
+      margin: 22px 0 10px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2e75b6;
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 0 0 12px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+
+    /* ================================
+       IMAGEM
+       ================================= */
+
+    figure {
+      margin: 18px 0 24px;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #475569;
+    }
+
+
+    /* ================================
+       FORMULÁRIO
+       ================================= */
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    fieldset {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 18px;
+    }
+
+    legend {
+      font-weight: 700;
+      color: #1f3864;
+      padding: 0 8px;
+    }
+
+    label,
+    .label-grupo {
+      display: block;
+      font-weight: 600;
+      margin: 12px 0 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #94a3b8;
+      border-radius: 4px;
+      font: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 6px;
+    }
+
+    .opcoes label {
+      display: inline-block;
+      margin-right: 18px;
+      font-weight: 400;
+    }
+
+
+    /* ================================
+       BOTÃO
+       ================================= */
+
+    button {
+      width: fit-content;
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 5px;
+      background: #713600;
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #512600;
+    }
+
+
+    /* ================================
+       ACESSIBILIDADE
+       ================================= */
+
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #2e75b6;
+      outline-offset: 3px;
+    }
+
+
+    /* ================================
+       TABELA
+       ================================= */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    th,
+    td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: left;
+    }
+
+    thead {
+      background: #e8eef7;
+    }
+
+
+    /* ================================
+       FOOTER
+       ================================= */
+
+    footer {
+      background: #38240D;
+      color: #fff;
+      padding: 18px 32px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+
+    /* ================================
+       SELO
+       ================================= */
+
+    .selo {
+      display: inline-block;
+      background: #eef3fa;
+      color: #1f3864;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    /* ================================
+       RESPONSIVIDADE
+       ================================= */
+
+    @media (max-width: 800px) {
+
+      main.conteudo {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      aside {
+        width: 100%;
+        flex-basis: auto;
+      }
+
+      header,
+      nav,
+      footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <header>
+  <!-- ================================
+       CABEÇALHO
+       ================================= -->
+
+  <header id="inicio">
 
     <p class="site-nome">
-      Pets para Adoção - Encontre seu novo melhor amigo.
+      Pets para Adoção - Encontre seu novo melhor amigo
     </p>
 
     <p class="subtitulo-site">
-      Cães e gatos resgatados esperando por uma família,
-      cada pet tem uma história e espera pela oportunidade
+      Cães e gatos resgatados esperando por uma família.
+      Cada pet tem uma história e espera pela oportunidade
       de fazer parte de uma família.
     </p>
 
   </header>
 
+
+  <!-- ================================
+       NAVEGAÇÃO
+       ================================= -->
 
   <nav aria-label="Navegação principal">
 
@@ -39,641 +407,850 @@
       Sobre o Site
     </a>
 
+    <a href="#adocao">
+      Adoção
+    </a>
+
+    <a href="#contato">
+      Contato
+    </a>
+
   </nav>
 
 
-  <main>
+  <!-- ================================
+       CONTEÚDO PRINCIPAL
+       ================================= -->
+
+  <main class="conteudo">
+
+    <div class="miolo">
 
 
-    <section id="como-ajudar">
+      <!-- ================================
+           COMO AJUDAR
+           ================================= -->
 
-      <h1>Como Ajudar?</h1>
+      <section id="como-ajudar" class="post">
 
-      <h2>Toda ajuda pode transformar uma vida</h2>
+        <h1>
+          Como Ajudar?
+        </h1>
+
+        <figure>
+
+          <img
+            src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80"
+            alt="Cão e gato juntos representando a adoção responsável"
+            width="900"
+            height="600">
+
+          <figcaption>
+            Adotar é oferecer uma nova oportunidade
+            com carinho e responsabilidade.
+          </figcaption>
+
+        </figure>
+
+
+        <h2>
+          Toda ajuda pode transformar uma vida
+        </h2>
+
+        <p>
+          Existem diversas maneiras de contribuir para que cães
+          e gatos encontrem um lar seguro e recebam os cuidados
+          necessários. Mesmo que você não possa adotar neste
+          momento, ainda pode fazer a diferença.
+        </p>
+
+
+        <h2>
+          Adote com responsabilidade
+        </h2>
+
+        <p>
+          Ao adotar, você oferece uma nova oportunidade para
+          um animal que precisa de carinho, proteção e segurança.
+        </p>
+
+        <p>
+          Antes de tomar essa decisão, avalie se possui tempo,
+          espaço e condições para cuidar do pet durante toda
+          a vida dele.
+        </p>
+
+
+        <h2>
+          Ofereça um lar temporário
+        </h2>
+
+        <p>
+          O lar temporário acolhe o animal por um período
+          determinado, enquanto ele aguarda uma família definitiva.
+          Essa ajuda proporciona mais segurança, conforto e atenção
+          ao pet durante o processo de adoção.
+        </p>
+
+
+        <h2>
+          Faça uma doação
+        </h2>
+
+        <p>
+          As doações podem ajudar na compra de:
+        </p>
+
+        <ul>
+          <li>Ração</li>
+          <li>Medicamentos</li>
+          <li>Vacinas</li>
+          <li>Produtos de higiene</li>
+          <li>Cobertores e caminhas</li>
+          <li>Coleiras e guias</li>
+          <li>Materiais para limpeza</li>
+          <li>Consultas e procedimentos veterinários</li>
+        </ul>
+
+        <p>
+          Antes de realizar uma doação, entre em contato com
+          os responsáveis pelo projeto para conhecer as necessidades
+          atuais e os canais oficiais.
+        </p>
+
+        <p>
+          <strong>Contato:</strong>
+          mariaisadorabrazmedeiros@gmail.com
+        </p>
+
+        <p>
+          <strong>Endereço:</strong>
+          XPTO, 999 - Bairro São Francisco - Belo Horizonte/MG
+        </p>
+
+        <p>
+          <strong>Horário:</strong>
+          Seg. a sex., 9h às 17h
+        </p>
+
+
+        <h2>
+          Seja voluntário
+        </h2>
+
+        <p>
+          Você também pode colaborar oferecendo seu tempo
+          e suas habilidades. Os voluntários podem ajudar em
+          atividades como:
+        </p>
+
+        <ul>
+          <li>Divulgação dos animais</li>
+          <li>Produção de fotos e vídeos</li>
+          <li>Transporte dos pets</li>
+          <li>Organização de campanhas</li>
+          <li>Participação em eventos de adoção</li>
+          <li>Arrecadação de alimentos e materiais</li>
+          <li>Apoio nos cuidados diários</li>
+        </ul>
+
+
+        <h2>
+          Compartilhe
+        </h2>
+
+        <p>
+          Divulgar os perfis dos animais disponíveis aumenta
+          as chances de adoção. Compartilhe o site e as publicações
+          do projeto com amigos, familiares e em suas redes sociais.
+        </p>
+
+        <p>
+          Um simples compartilhamento pode ajudar um pet
+          a encontrar uma família.
+        </p>
+
+      </section>
+
+
+      <!-- ================================
+           FAQ
+           ================================= -->
+
+      <section id="faq" class="post">
+
+        <h1>
+          FAQ
+        </h1>
+
+        <h2>
+          Perguntas frequentes
+        </h2>
+
+        <p>
+          Encontre respostas para as principais dúvidas sobre
+          adoção, cuidados e funcionamento do site.
+        </p>
+
+
+        <h2>
+          Como posso adotar um animal?
+        </h2>
+
+        <p>
+          Acesse a página de animais disponíveis, escolha o pet
+          que deseja conhecer e entre em contato por meio do canal
+          informado em seu perfil.
+        </p>
+
+
+        <h2>
+          Quais são os requisitos para adotar?
+        </h2>
+
+        <p>
+          Os requisitos podem variar. Geralmente, o interessado
+          deve ser maior de idade, apresentar identificação e
+          demonstrar condições para oferecer alimentação,
+          cuidados veterinários, segurança e atenção.
+        </p>
+
+
+        <h2>
+          A adoção é gratuita?
+        </h2>
+
+        <p>
+          Normalmente, a adoção não envolve a compra do animal.
+          Porém, o adotante deve estar preparado para os custos
+          de alimentação, vacinação, higiene e cuidados veterinários.
+        </p>
+
+
+        <h2>
+          Posso conhecer o pet antes de adotar?
+        </h2>
+
+        <p>
+          Sim. Sempre que possível, é importante conhecer o animal
+          antes de concluir a adoção para entender seu comportamento
+          e suas necessidades.
+        </p>
+
+
+        <h2>
+          Os animais são vacinados e castrados?
+        </h2>
+
+        <p>
+          Essa informação varia de acordo com cada pet.
+          Consulte o perfil do animal ou entre em contato
+          com os responsáveis.
+        </p>
+
+
+        <h2>
+          Posso adotar se já tenho outros animais?
+        </h2>
+
+        <p>
+          Sim, desde que seja possível realizar uma adaptação
+          segura e gradual. Informe aos responsáveis que você
+          já possui outros animais.
+        </p>
+
+
+        <h2>
+          Posso adotar um animal para outra pessoa?
+        </h2>
+
+        <p>
+          A adoção deve ser realizada pela pessoa que será
+          responsável pelo pet. Animais não devem ser oferecidos
+          como presentes ou surpresas.
+        </p>
+
+
+        <h2>
+          O que acontece se eu não puder mais cuidar do animal?
+        </h2>
+
+        <p>
+          Entre em contato com os responsáveis pela adoção antes
+          de entregar o animal a outra pessoa ou abandoná-lo.
+        </p>
+
+
+        <h2>
+          Como posso ajudar sem adotar?
+        </h2>
+
+        <p>
+          Você pode divulgar os animais, oferecer lar temporário,
+          doar materiais, participar de campanhas ou atuar como voluntário.
+        </p>
+
+
+        <h2>
+          Encontrei um animal abandonado. O que devo fazer?
+        </h2>
+
+        <p>
+          Se for seguro, ofereça água e mantenha o animal protegido
+          do trânsito e de outros perigos. Procure atendimento veterinário
+          ou organizações de proteção animal.
+        </p>
+
+
+        <h2>
+          As informações dos animais são atualizadas?
+        </h2>
+
+        <p>
+          O site busca manter os perfis atualizados, mas um animal
+          pode ser adotado antes da atualização. Entre em contato
+          para confirmar a disponibilidade.
+        </p>
+
+      </section>
+
+
+      <!-- ================================
+           SOBRE O SITE
+           ================================= -->
+
+      <section id="sobre-o-site" class="post">
+
+        <h1>
+          Sobre o Site
+        </h1>
+
+
+        <h2>
+          Sobre o projeto
+        </h2>
+
+        <p>
+          Este site foi criado para dar visibilidade a cães e gatos
+          que estão à procura de uma família. Nosso objetivo é facilitar
+          o encontro entre animais disponíveis para adoção e pessoas
+          preparadas para oferecer um lar seguro, responsável e cheio de carinho.
+        </p>
+
+        <p>
+          Cada perfil apresenta informações importantes sobre o pet,
+          como idade aproximada, porte, personalidade, condições de
+          saúde e necessidades especiais.
+        </p>
+
+
+        <h2>
+          Nossa missão
+        </h2>
+
+        <p>
+          Promover a adoção responsável e contribuir para que mais
+          animais tenham acesso a cuidado, proteção e qualidade de vida.
+        </p>
+
+
+        <h2>
+          Nossa visão
+        </h2>
+
+        <p>
+          Ser um espaço confiável e acessível para a divulgação
+          de animais disponíveis para adoção.
+        </p>
+
+
+        <h2>
+          Nossos valores
+        </h2>
+
+        <ul>
+
+          <li>
+            <strong>Respeito:</strong>
+            todos os animais merecem cuidado e proteção.
+          </li>
+
+          <li>
+            <strong>Responsabilidade:</strong>
+            adotar é assumir um compromisso para toda a vida.
+          </li>
+
+          <li>
+            <strong>Transparência:</strong>
+            as informações devem ser apresentadas de maneira clara.
+          </li>
+
+          <li>
+            <strong>Empatia:</strong>
+            cada animal possui uma história e necessidades específicas.
+          </li>
+
+          <li>
+            <strong>Colaboração:</strong>
+            famílias, voluntários e organizações podem transformar
+            vidas juntos.
+          </li>
+
+        </ul>
+
+
+        <h2>
+          Como o site funciona?
+        </h2>
+
+        <ul>
+          <li>Os animais disponíveis são cadastrados com fotos e informações.</li>
+          <li>O visitante acessa os perfis e conhece as características de cada pet.</li>
+          <li>O visitante entra em contato com os responsáveis.</li>
+          <li>Os responsáveis avaliam as condições para uma adoção segura.</li>
+          <li>Após a aprovação, o animal é encaminhado para sua nova família.</li>
+        </ul>
+
+
+        <h2>
+          Adoção responsável
+        </h2>
+
+        <p>
+          A adoção deve ser uma decisão consciente. Antes de adotar,
+          é importante considerar os custos, o espaço disponível,
+          o tempo necessário e as possíveis mudanças na rotina da família.
+        </p>
+
+
+        <h2>
+          Importante
+        </h2>
+
+        <p>
+          O site atua como um canal de divulgação e aproximação.
+          A responsabilidade pelas informações, entrevistas, visitas,
+          documentos e entrega dos animais pertence aos responsáveis
+          indicados em cada perfil.
+        </p>
+
+        <p>
+          Não envie documentos, valores ou informações pessoais sem
+          verificar a identidade e a legitimidade dos envolvidos.
+        </p>
+
+
+        <h2>
+          Juntos podemos transformar vidas
+        </h2>
+
+        <p>
+          Cada adoção representa uma nova oportunidade.
+          Ao conhecer, divulgar ou adotar um pet, você contribui
+          para um futuro mais seguro e acolhedor.
+        </p>
+
+      </section>
+
+
+      <!-- ================================
+           FORMULÁRIO
+           ================================= -->
+
+      <section id="adocao" class="post">
+
+        <h1>
+          Quero ajudar na adoção
+        </h1>
+
+        <p>
+          Preencha o formulário abaixo para demonstrar interesse
+          em adotar, oferecer lar temporário ou atuar como voluntário.
+        </p>
+
+
+        <form action="#" method="post">
+
+          <fieldset>
+
+            <legend>
+              Dados para contato
+            </legend>
+
+
+            <label for="nome">
+              Nome completo
+            </label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              minlength="3"
+              maxlength="80"
+              pattern="[A-Za-zÀ-ÿ ]{3,80}"
+              autocomplete="name">
+
+
+            <label for="email">
+              E-mail
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              minlength="5"
+              maxlength="120"
+              autocomplete="email">
+
+
+            <label for="telefone">
+              Telefone
+            </label>
+
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              required
+              minlength="10"
+              maxlength="15"
+              pattern="[0-9() +\-]{10,15}"
+              autocomplete="tel">
+
+
+            <label for="idade">
+              Idade
+            </label>
+
+            <input
+              type="number"
+              id="idade"
+              name="idade"
+              required
+              min="18"
+              max="100">
+
+
+            <label for="data">
+              Data de disponibilidade
+            </label>
+
+            <input
+              type="date"
+              id="data"
+              name="data"
+              required>
+
+            <label for="cidade">
+              Cidade
+            </label>
+
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              required
+              minlength="2"
+              maxlength="60">
+
+          </fieldset>
+
+
+          <fieldset>
+
+            <legend>
+              Interesse
+            </legend>
+
+
+            <label for="tipo-ajuda">
+              Como deseja ajudar?
+            </label>
+
+            <select
+              id="tipo-ajuda"
+              name="tipo-ajuda"
+              required>
+
+              <option value="">
+                Selecione uma opção
+              </option>
+
+              <option value="adocao">
+                Adotar um pet
+              </option>
+
+              <option value="lar-temporario">
+                Oferecer lar temporário
+              </option>
+
+              <option value="voluntario">
+                Ser voluntário
+              </option>
+
+              <option value="doacao">
+                Fazer uma doação
+              </option>
+
+            </select>
+
+
+            <p class="label-grupo">
+              Qual tipo de animal você prefere?
+            </p>
+
+
+            <div class="opcoes">
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="animal"
+                  value="cao"
+                  required>
+
+                Cão
+
+              </label>
+
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="animal"
+                  value="gato">
+
+                Gato
+
+              </label>
+
+
+              <label>
+
+                <input
+                  type="radio"
+                  name="animal"
+                  value="qualquer">
+
+                Qualquer um
+
+              </label>
+
+            </div>
+
+
+            <label>
+
+              <input
+                type="checkbox"
+                name="contato-whatsapp"
+                value="sim">
+
+              Aceito receber contato pelo WhatsApp.
+
+            </label>
+
+
+            <label for="mensagem">
+              Mensagem
+            </label>
+
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              required
+              minlength="10"
+              maxlength="500"
+              placeholder="Conte um pouco sobre o tipo de ajuda que deseja oferecer."></textarea>
+
+          </fieldset>
+
+
+          <button type="submit">
+            Enviar interesse
+          </button>
+
+        </form>
+
+      </section>
+
+      <section class="post" aria-labelledby="tabela-titulo">
+
+        <h2 id="tabela-titulo">
+          Exemplo de pets disponíveis
+        </h2>
+
+
+        <table>
+
+          <caption>
+            Pets aguardando uma família
+          </caption>
+
+
+          <thead>
+
+            <tr>
+
+              <th scope="col">
+                Pet
+              </th>
+
+              <th scope="col">
+                Tipo
+              </th>
+
+              <th scope="col">
+                Idade
+              </th>
+
+              <th scope="col">
+                Perfil
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <th scope="row">
+                Mel
+              </th>
+
+              <td>
+                Cão
+              </td>
+
+              <td>
+                2 anos
+              </td>
+
+              <td>
+                Carinhosa e brincalhona
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <th scope="row">
+                Theo
+              </th>
+
+              <td>
+                Gato
+              </td>
+
+              <td>
+                1 ano
+              </td>
+
+              <td>
+                Calmo e companheiro
+              </td>
+
+            </tr>
+
+
+            <tr>
+
+              <th scope="row">
+                Luna
+              </th>
+
+              <td>
+                Cão
+              </td>
+
+              <td>
+                4 anos
+              </td>
+
+              <td>
+                Dócil e tranquila
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+    </div>
+
+
+    <!-- ================================
+         ASIDE
+         ================================= -->
+
+    <aside aria-labelledby="acessibilidade-titulo">
+
+      <h2 id="acessibilidade-titulo">
+        Acessibilidade
+      </h2>
 
       <p>
-        Existem diversas maneiras de contribuir para que cães e gatos
-        encontrem um lar seguro e recebam os cuidados necessários.
-        Mesmo que você não possa adotar neste momento, ainda pode
-        fazer a diferença.
-      </p>
-
-
-      <h2>Adote com responsabilidade</h2>
-
-      <p>
-        Ao adotar, você oferece uma nova oportunidade para um animal
-        que precisa de carinho, proteção e segurança.
-      </p>
-
-      <p>
-        Antes de tomar essa decisão, avalie se você possui tempo,
-        espaço e condições para cuidar do pet durante toda a vida dele.
-      </p>
-
-      <p>
-        Adotar é um compromisso baseado em amor, cuidado e responsabilidade.
-      </p>
-
-
-      <h2>Ofereça um lar temporário</h2>
-
-      <p>
-        O lar temporário acolhe o animal por um período determinado,
-        enquanto ele aguarda uma família definitiva.
-      </p>
-
-      <p>
-        Essa ajuda proporciona mais segurança, conforto e atenção
-        ao pet durante o processo de adoção.
-      </p>
-
-
-      <h2>Faça uma doação</h2>
-
-      <p>
-        As doações podem ajudar na compra de:
+        Este site utiliza regiões semânticas para facilitar
+        a navegação por tecnologias assistivas.
       </p>
 
       <ul>
 
-        <li>Ração</li>
-        <li>Medicamentos</li>
-        <li>Vacinas</li>
-        <li>Produtos de higiene</li>
-        <li>Cobertores e caminhas</li>
-        <li>Coleiras e guias</li>
-        <li>Materiais para limpeza</li>
-        <li>Consultas e procedimentos veterinários</li>
-
-      </ul>
-
-
-      <p>
-        Antes de realizar uma doação, entre em contato com os responsáveis
-        pelo projeto para conhecer as necessidades atuais e os canais
-        oficiais de contribuição.
-      </p>
-
-      <p>
-        <strong>Contato:</strong>
-        mariaisadorabrazmedeiros@gmail.com
-      </p>
-
-      <p>
-        <strong>Endereço:</strong>
-        XPTO,999 - Bairro: São Francisco - Belo Horizonte/MG
-      </p>
-
-      <p>
-        <strong>Horário:</strong>
-        Seg a sex, 9h às 17h
-      </p>
-
-
-      <h2>Seja voluntário</h2>
-
-      <p>
-        Você também pode colaborar oferecendo seu tempo e suas habilidades.
-        Os voluntários podem ajudar em atividades como:
-      </p>
-
-      <ul>
-
-        <li>Divulgação dos animais</li>
-        <li>Produção de fotos e vídeos</li>
-        <li>Transporte dos pets</li>
-        <li>Organização de campanhas</li>
-        <li>Participação em eventos de adoção</li>
-        <li>Arrecadação de alimentos e materiais</li>
-        <li>Apoio nos cuidados diários</li>
-
-      </ul>
-
-
-      <h2>Compartilhe</h2>
-
-      <p>
-        Divulgar os perfis dos animais disponíveis aumenta as chances
-        de adoção. Compartilhe o site e as publicações do projeto
-        com amigos, familiares e em suas redes sociais.
-      </p>
-
-      <p>
-        Um simples compartilhamento pode ajudar um pet a encontrar
-        uma família.
-      </p>
-
-    </section>
-
-
-    <section id="faq">
-
-      <h1>FAQ</h1>
-
-      <h2>Perguntas frequentes</h2>
-
-      <p>
-        Encontre respostas para as principais dúvidas sobre adoção,
-        cuidados e funcionamento do site.
-      </p>
-
-
-      <h2>Como posso adotar um animal?</h2>
-
-      <p>
-        Acesse a página de animais disponíveis, escolha o pet que deseja
-        conhecer e entre em contato por meio do canal informado em seu perfil.
-        Os responsáveis explicarão todas as etapas do processo de adoção.
-      </p>
-
-
-      <h2>Quais são os requisitos para adotar?</h2>
-
-      <p>
-        Os requisitos podem variar de acordo com os responsáveis pelo animal.
-        Geralmente, o interessado deve ser maior de idade, apresentar documento
-        de identificação, informar onde o pet viverá e demonstrar que possui
-        condições para oferecer alimentação, cuidados veterinários, segurança
-        e atenção.
-      </p>
-
-
-      <h2>A adoção é gratuita?</h2>
-
-      <p>
-        Normalmente, a adoção não envolve a compra do animal. Porém,
-        o adotante deve estar preparado para assumir os custos relacionados
-        à alimentação, vacinação, higiene, consultas veterinárias e demais
-        cuidados necessários.
-      </p>
-
-
-      <h2>Posso conhecer o pet antes de adotar?</h2>
-
-      <p>
-        Sim. Sempre que possível, é importante conhecer o animal antes
-        de concluir a adoção.
-      </p>
-
-
-      <h2>Os animais são vacinados e castrados?</h2>
-
-      <p>
-        Essa informação pode variar de acordo com cada pet.
-        Consulte o perfil do animal ou entre em contato com os responsáveis.
-      </p>
-
-
-      <h2>Posso adotar se já tenho outros animais?</h2>
-
-      <p>
-        Sim, desde que seja possível realizar uma adaptação segura e gradual.
-      </p>
-
-
-      <h2>Posso adotar um animal para outra pessoa?</h2>
-
-      <p>
-        A adoção deve ser realizada pela pessoa que será responsável pelo pet.
-        Animais não devem ser oferecidos como presentes ou surpresas sem que
-        o futuro tutor esteja preparado e de acordo com a adoção.
-      </p>
-
-
-      <h2>O que acontece se eu não puder mais cuidar do animal?</h2>
-
-      <p>
-        Entre em contato com os responsáveis pela adoção antes de entregar
-        o animal a outra pessoa ou abandoná-lo.
-      </p>
-
-
-      <h2>Como posso ajudar sem adotar?</h2>
-
-      <p>
-        Você pode contribuir divulgando os animais, oferecendo lar temporário,
-        doando materiais, participando de campanhas ou atuando como voluntário.
-      </p>
-
-
-      <h2>Encontrei um animal abandonado. O que devo fazer?</h2>
-
-      <p>
-        Se for seguro, ofereça água e mantenha o animal protegido do trânsito
-        e de outros perigos. Procure atendimento veterinário, organizações
-        de proteção animal ou os serviços responsáveis em sua região.
-      </p>
-
-
-      <h2>As informações dos animais são atualizadas?</h2>
-
-      <p>
-        O site busca manter os perfis atualizados. Porém, um animal pode
-        ser adotado antes da atualização da página. Entre em contato com
-        os responsáveis para confirmar a disponibilidade.
-      </p>
-
-    </section>
-
-
-    <section id="sobre-o-site">
-
-      <h1>Sobre o Site</h1>
-
-      <h2>Sobre o projeto</h2>
-
-      <p>
-        Este site foi criado para dar visibilidade a cães e gatos que estão
-        à procura de uma família. Nosso objetivo é facilitar o encontro entre
-        animais disponíveis para adoção e pessoas preparadas para oferecer
-        um lar seguro, responsável e cheio de carinho.
-      </p>
-
-      <p>
-        Cada perfil apresenta informações importantes sobre o pet, como idade
-        aproximada, porte, personalidade, condições de saúde e necessidades especiais.
-      </p>
-
-
-      <h2>Nossa missão</h2>
-
-      <p>
-        Promover a adoção responsável e contribuir para que mais animais
-        tenham acesso a cuidado, proteção e qualidade de vida.
-      </p>
-
-
-      <h2>Nossa visão</h2>
-
-      <p>
-        Ser um espaço confiável e acessível para a divulgação de animais
-        disponíveis para adoção, incentivando atitudes de respeito,
-        responsabilidade e cuidado com os animais.
-      </p>
-
-
-      <h2>Nossos valores</h2>
-
-      <ul>
-
         <li>
-          <strong>Respeito:</strong>
-          todos os animais merecem cuidado e proteção.
+          Header: apresentação do site
         </li>
 
         <li>
-          <strong>Responsabilidade:</strong>
-          adotar é assumir um compromisso para toda a vida.
+          Nav: navegação principal
         </li>
 
         <li>
-          <strong>Transparência:</strong>
-          as informações devem ser apresentadas de maneira clara.
+          Main: conteúdo principal
         </li>
 
         <li>
-          <strong>Empatia:</strong>
-          cada animal possui uma história e necessidades específicas.
+          Aside: informações complementares
         </li>
 
         <li>
-          <strong>Colaboração:</strong>
-          famílias, voluntários e organizações podem transformar vidas juntos.
+          Footer: informações finais
         </li>
 
-      </ul>
-
-
-      <h2>Como o site funciona?</h2>
-
-      <ul>
-
-        <li>Os animais disponíveis são cadastrados com fotos e informações.</li>
-        <li>O visitante acessa os perfis e conhece as características de cada pet.</li>
-        <li>O visitante entra em contato com os responsáveis.</li>
-        <li>Os responsáveis avaliam as condições para uma adoção segura.</li>
-        <li>Após a aprovação, o animal é encaminhado para sua nova família.</li>
-
-      </ul>
-
-
-      <h2>Adoção responsável</h2>
-
-      <p>
-        A adoção deve ser uma decisão consciente. Antes de adotar,
-        é importante considerar os custos, o espaço disponível,
-        o tempo necessário e as possíveis mudanças na rotina da família.
-      </p>
-
-      <p>
-        Um animal precisa de alimentação adequada, acompanhamento veterinário,
-        higiene, proteção, atenção e carinho durante toda a vida.
-      </p>
-
-
-      <h2>Importante</h2>
-
-      <p>
-        O site atua como um canal de divulgação e aproximação.
-        A responsabilidade pelas informações, entrevistas, visitas,
-        documentos e entrega dos animais pertence aos responsáveis
-        indicados em cada perfil.
-      </p>
-
-      <p>
-        Recomendamos que todas as etapas sejam realizadas com segurança
-        e transparência. Não envie documentos, valores ou informações
-        pessoais sem verificar a identidade e a legitimidade dos envolvidos.
-      </p>
-
-
-      <h2>Juntos podemos transformar vidas</h2>
-
-      <p>
-        Cada adoção representa uma nova oportunidade. Ao conhecer,
-        divulgar ou adotar um pet, você contribui para a construção
-        de um futuro mais seguro e acolhedor para os animais.
-      </p>
-
-    </section>
-
-
-    <aside>
-
-      <h2>Acessibilidade</h2>
-
-      <p>
-        Este site utiliza regiões semânticas para facilitar a navegação
-        por tecnologias assistivas.
-      </p>
-
-      <ul>
-        <li>Header: apresentação do site</li>
-        <li>Nav: navegação principal</li>
-        <li>Main: conteúdo principal</li>
-        <li>Aside: informações complementares</li>
-        <li>Footer: informações finais</li>
       </ul>
 
     </aside>
-    <section id="adocao">
-
-      <h1>Quero ajudar na adoção</h1>
-
-      <p>
-        Preencha o formulário para demonstrar seu interesse
-        em ajudar os animais.
-      </p>
-
-      <form action="#" method="post">
-
-        <fieldset>
-
-          <legend>Dados para contato</legend>
-
-          <label for="nome">
-            Nome completo
-          </label>
-
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            required
-            minlength="3"
-            maxlength="80">
-
-          <label for="email">
-            E-mail
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required>
-
-          <label for="telefone">
-            Telefone
-          </label>
-
-          <input
-            type="tel"
-            id="telefone"
-            name="telefone"
-            required
-            minlength="10"
-            maxlength="15">
-
-          <label for="idade">
-            Idade
-          </label>
-
-          <input
-            type="number"
-            id="idade"
-            name="idade"
-            required
-            min="18"
-            max="100">
-
-        </fieldset>
-
-
-        <fieldset>
-
-          <legend>Interesse</legend>
-
-          <label for="tipo-ajuda">
-            Como deseja ajudar?
-          </label>
-
-          <select
-            id="tipo-ajuda"
-            name="tipo-ajuda"
-            required>
-
-            <option value="">
-              Selecione uma opção
-            </option>
-
-            <option value="adocao">
-              Adotar
-            </option>
-
-            <option value="lar-temporario">
-              Lar temporário
-            </option>
-
-            <option value="voluntario">
-              Voluntário
-            </option>
-
-            <option value="doacao">
-              Doação
-            </option>
-
-          </select>
-
-
-          <p>
-            Qual animal você prefere?
-          </p>
-
-          <label>
-
-            <input
-              type="radio"
-              name="animal"
-              value="cao"
-              required>
-
-            Cão
-
-          </label>
-
-          <label>
-
-            <input
-              type="radio"
-              name="animal"
-              value="gato">
-
-            Gato
-
-          </label>
-
-
-          <label>
-
-            <input
-              type="radio"
-              name="animal"
-              value="qualquer">
-
-            Qualquer um
-
-          </label>
-
-
-          <label>
-
-            <input
-              type="checkbox"
-              name="contato"
-              value="whatsapp">
-
-            Aceito receber contato pelo WhatsApp.
-
-          </label>
-
-
-          <label for="mensagem">
-            Mensagem
-          </label>
-
-          <textarea
-            id="mensagem"
-            name="mensagem"
-            rows="5"
-            required
-            minlength="10"
-            maxlength="500">
-          </textarea>
-
-
-        </fieldset>
-
-
-        <button type="submit">
-          Enviar interesse
-        </button>
-
-      </form>
-
-    </section>
-
-
-    <section>
-
-      <h2>Pets disponíveis</h2>
-
-      <table>
-
-        <caption>
-          Animais disponíveis para adoção
-        </caption>
-
-        <thead>
-
-          <tr>
-
-            <th scope="col">Pet</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Idade</th>
-            <th scope="col">Perfil</th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-
-            <th scope="row">Mel</th>
-
-            <td>Cão</td>
-
-            <td>2 anos</td>
-
-            <td>Carinhosa e brincalhona</td>
-
-          </tr>
-
-
-          <tr>
-
-            <th scope="row">Theo</th>
-
-            <td>Gato</td>
-
-            <td>1 ano</td>
-
-            <td>Calmo e companheiro</td>
-
-          </tr>
-
-
-          <tr>
-
-            <th scope="row">Luna</th>
-
-            <td>Cão</td>
-
-            <td>4 anos</td>
-
-            <td>Dócil e tranquila</td>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </section>
 
   </main>
 
-
   <footer id="contato">
 
-    Pets para Adoção · Belo Horizonte/MG ·
-    Contato:
-    <a href="mailto:mariaisadorabrazmedeiros@gmail.com">
-      mariaisadorabrazmedeiros@gmail.com
-    </a>
+    <p>
+      Pets para Adoção · Belo Horizonte/MG ·
+      Contato:
+      <a href="mailto:mariaisadorabrazmedeiros@gmail.com">
+        mariaisadorabrazmedeiros@gmail.com
+      </a>
+    </p>
+
+    <p>
+      <a href="#inicio">
+        Voltar ao início
+      </a>
+    </p>
 
   </footer>
 

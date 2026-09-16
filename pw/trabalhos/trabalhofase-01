@@ -1099,32 +1099,6 @@
         a navegação por tecnologias assistivas.
       </p>
 
-      <ul>
-
-        <li>
-          Header: apresentação do site
-        </li>
-
-        <li>
-          Nav: navegação principal
-        </li>
-
-        <li>
-          Main: conteúdo principal
-        </li>
-
-        <li>
-          Aside: informações complementares
-        </li>
-
-        <li>
-          Footer: informações finais
-        </li>
-
-      </ul>
-
-    </aside>
-
   </main>
 
   <footer id="contato">

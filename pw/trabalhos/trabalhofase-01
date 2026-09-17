@@ -9,6 +9,17 @@
 
   <style>
 
+    :root {
+      --marrom: #713600;
+      --marrom-escuro: #512600;
+      --amarelo: #fdfbd4;
+      --azul: #1f3864;
+      --fundo: #f5f7fa;
+      --branco: #ffffff;
+      --borda: #e2e8f0;
+      --espaco: 20px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -21,17 +32,18 @@
       margin: 0;
       font-family: system-ui, "Segoe UI", Arial, sans-serif;
       color: #1e293b;
-      background: #f5f7fa;
+      background: var(--fundo);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
-      color: #1f3864;
+      color: var(--azul);
     }
 
     header {
-      background: #713600;
-      color: #fff;
+      background: var(--marrom);
+      color: var(--branco);
       padding: 24px 32px 16px;
     }
 
@@ -48,7 +60,7 @@
     }
 
     nav {
-      background: #fdfbd4;
+      background: var(--amarelo);
       padding: 10px 32px;
     }
 
@@ -78,15 +90,15 @@
 
     aside {
       flex: 0 0 250px;
-      background: #fff;
-      border: 1px solid #e2e8f0;
+      background: var(--branco);
+      border: 1px solid var(--borda);
       border-radius: 6px;
       padding: 16px 20px;
     }
 
     .post {
-      background: #fff;
-      border: 1px solid #e2e8f0;
+      background: var(--branco);
+      border: 1px solid var(--borda);
       border-radius: 6px;
       padding: 20px 24px;
       margin-bottom: 20px;
@@ -102,14 +114,14 @@
     h2 {
       font-size: 19px;
       font-weight: 700;
-      color: #1f3864;
+      color: var(--azul);
       margin: 22px 0 10px;
     }
 
     h3 {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 700;
-      color: #2e75b6;
+      color: var(--azul);
       margin: 0 0 6px;
     }
 
@@ -157,7 +169,7 @@
 
     legend {
       font-weight: 700;
-      color: #1f3864;
+      color: var(--azul);
       padding: 0 8px;
     }
 
@@ -172,11 +184,12 @@
     select,
     textarea {
       width: 100%;
+      max-width: 100%;
       padding: 10px 12px;
       border: 1px solid #94a3b8;
       border-radius: 4px;
       font: inherit;
-      background: #fff;
+      background: var(--branco);
     }
 
     textarea {
@@ -200,15 +213,15 @@
       padding: 10px 18px;
       border: 0;
       border-radius: 5px;
-      background: #713600;
-      color: #fff;
+      background: var(--marrom);
+      color: var(--branco);
       font: inherit;
       font-weight: 700;
       cursor: pointer;
     }
 
     button:hover {
-      background: #512600;
+      background: var(--marrom-escuro);
     }
 
     a:focus-visible,
@@ -220,32 +233,44 @@
       outline-offset: 3px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--espaco);
     }
 
-    caption {
-      text-align: left;
+    .card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-conteudo {
+      padding: 15px;
+    }
+
+    .card-conteudo span {
+      display: inline-block;
+      background: #eef3fa;
+      color: var(--azul);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 12px;
       font-weight: 700;
       margin-bottom: 8px;
     }
 
-    th,
-    td {
-      border: 1px solid #cbd5e1;
-      padding: 10px;
-      text-align: left;
-    }
-
-    thead {
-      background: #e8eef7;
-    }
-
     footer {
       background: #38240D;
-      color: #fff;
+      color: var(--branco);
       padding: 18px 32px;
       font-size: 13px;
       text-align: center;
@@ -256,48 +281,73 @@
     }
 
     footer a {
-      color: #fff;
+      color: var(--branco);
     }
 
     .selo {
       display: inline-block;
       background: #eef3fa;
-      color: #1f3864;
+      color: var(--azul);
       border-radius: 4px;
       padding: 2px 8px;
       font-size: 12px;
       font-weight: 700;
     }
 
-    @media (max-width: 800px) {
+    /* Mobile */
+
+    main.conteudo {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    aside {
+      width: 100%;
+      flex-basis: auto;
+    }
+
+    header,
+    nav,
+    footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    /* Tablet */
+
+    @media (min-width: 768px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       main.conteudo {
-        flex-direction: column;
-        padding: 20px;
+        flex-direction: row;
       }
 
       aside {
-        width: 100%;
-        flex-basis: auto;
+        width: auto;
       }
 
-      header,
-      nav,
-      footer {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+    }
 
-      nav a {
-        display: inline-block;
-        margin-bottom: 6px;
+    /* Desktop */
+
+    @media (min-width: 1024px) {
+
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
       }
 
     }
 
   </style>
 </head>
-
 
 <body>
 
@@ -364,7 +414,6 @@
 
         </figure>
 
-
         <h2>
           Toda ajuda pode transformar uma vida
         </h2>
@@ -375,7 +424,6 @@
           necessários. Mesmo que você não possa adotar neste
           momento, ainda pode fazer a diferença.
         </p>
-
 
         <h2>
           Adote com responsabilidade
@@ -392,7 +440,6 @@
           a vida dele.
         </p>
 
-
         <h2>
           Ofereça um lar temporário
         </h2>
@@ -403,7 +450,6 @@
           Essa ajuda proporciona mais segurança, conforto e atenção
           ao pet durante o processo de adoção.
         </p>
-
 
         <h2>
           Faça uma doação
@@ -445,7 +491,6 @@
           Seg. a sex., 9h às 17h
         </p>
 
-
         <h2>
           Seja voluntário
         </h2>
@@ -465,7 +510,6 @@
           <li>Arrecadação de alimentos e materiais</li>
           <li>Apoio nos cuidados diários</li>
         </ul>
-
 
         <h2>
           Compartilhe
@@ -499,7 +543,6 @@
           adoção, cuidados e funcionamento do site.
         </p>
 
-
         <h2>
           Como posso adotar um animal?
         </h2>
@@ -509,7 +552,6 @@
           que deseja conhecer e entre em contato por meio do canal
           informado em seu perfil.
         </p>
-
 
         <h2>
           Quais são os requisitos para adotar?
@@ -522,7 +564,6 @@
           cuidados veterinários, segurança e atenção.
         </p>
 
-
         <h2>
           A adoção é gratuita?
         </h2>
@@ -532,7 +573,6 @@
           Porém, o adotante deve estar preparado para os custos
           de alimentação, vacinação, higiene e cuidados veterinários.
         </p>
-
 
         <h2>
           Posso conhecer o pet antes de adotar?
@@ -544,7 +584,6 @@
           e suas necessidades.
         </p>
 
-
         <h2>
           Os animais são vacinados e castrados?
         </h2>
@@ -554,7 +593,6 @@
           Consulte o perfil do animal ou entre em contato
           com os responsáveis.
         </p>
-
 
         <h2>
           Posso adotar se já tenho outros animais?
@@ -566,7 +604,6 @@
           já possui outros animais.
         </p>
 
-
         <h2>
           Posso adotar um animal para outra pessoa?
         </h2>
@@ -577,7 +614,6 @@
           como presentes ou surpresas.
         </p>
 
-
         <h2>
           O que acontece se eu não puder mais cuidar do animal?
         </h2>
@@ -586,7 +622,6 @@
           Entre em contato com os responsáveis pela adoção antes
           de entregar o animal a outra pessoa ou abandoná-lo.
         </p>
-
 
         <h2>
           Como posso ajudar sem adotar?
@@ -597,7 +632,6 @@
           doar materiais, participar de campanhas ou atuar como voluntário.
         </p>
 
-
         <h2>
           Encontrei um animal abandonado. O que devo fazer?
         </h2>
@@ -607,7 +641,6 @@
           do trânsito e de outros perigos. Procure atendimento veterinário
           ou organizações de proteção animal.
         </p>
-
 
         <h2>
           As informações dos animais são atualizadas?
@@ -627,7 +660,6 @@
           Sobre o Site
         </h1>
 
-
         <h2>
           Sobre o projeto
         </h2>
@@ -645,7 +677,6 @@
           saúde e necessidades especiais.
         </p>
 
-
         <h2>
           Nossa missão
         </h2>
@@ -655,7 +686,6 @@
           animais tenham acesso a cuidado, proteção e qualidade de vida.
         </p>
 
-
         <h2>
           Nossa visão
         </h2>
@@ -664,7 +694,6 @@
           Ser um espaço confiável e acessível para a divulgação
           de animais disponíveis para adoção.
         </p>
-
 
         <h2>
           Nossos valores
@@ -700,7 +729,6 @@
 
         </ul>
 
-
         <h2>
           Como o site funciona?
         </h2>
@@ -713,7 +741,6 @@
           <li>Após a aprovação, o animal é encaminhado para sua nova família.</li>
         </ul>
 
-
         <h2>
           Adoção responsável
         </h2>
@@ -723,7 +750,6 @@
           é importante considerar os custos, o espaço disponível,
           o tempo necessário e as possíveis mudanças na rotina da família.
         </p>
-
 
         <h2>
           Importante
@@ -740,7 +766,6 @@
           Não envie documentos, valores ou informações pessoais sem
           verificar a identidade e a legitimidade dos envolvidos.
         </p>
-
 
         <h2>
           Juntos podemos transformar vidas
@@ -765,7 +790,6 @@
           em adotar, oferecer lar temporário ou atuar como voluntário.
         </p>
 
-
         <form action="#" method="post">
 
           <fieldset>
@@ -773,7 +797,6 @@
             <legend>
               Dados para contato
             </legend>
-
 
             <label for="nome">
               Nome completo
@@ -789,7 +812,6 @@
               pattern="[A-Za-zÀ-ÿ ]{3,80}"
               autocomplete="name">
 
-
             <label for="email">
               E-mail
             </label>
@@ -802,7 +824,6 @@
               minlength="5"
               maxlength="120"
               autocomplete="email">
-
 
             <label for="telefone">
               Telefone
@@ -818,7 +839,6 @@
               pattern="[0-9() +\-]{10,15}"
               autocomplete="tel">
 
-
             <label for="idade">
               Idade
             </label>
@@ -830,7 +850,6 @@
               required
               min="18"
               max="100">
-
 
             <label for="data">
               Data de disponibilidade
@@ -856,13 +875,11 @@
 
           </fieldset>
 
-
           <fieldset>
 
             <legend>
               Interesse
             </legend>
-
 
             <label for="tipo-ajuda">
               Como deseja ajudar?
@@ -895,11 +912,9 @@
 
             </select>
 
-
             <p class="label-grupo">
               Qual tipo de animal você prefere?
             </p>
-
 
             <div class="opcoes">
 
@@ -915,7 +930,6 @@
 
               </label>
 
-
               <label>
 
                 <input
@@ -926,7 +940,6 @@
                 Gato
 
               </label>
-
 
               <label>
 
@@ -941,7 +954,6 @@
 
             </div>
 
-
             <label>
 
               <input
@@ -952,7 +964,6 @@
               Aceito receber contato pelo WhatsApp.
 
             </label>
-
 
             <label for="mensagem">
               Mensagem
@@ -977,112 +988,135 @@
 
       </section>
 
-      <section class="post" aria-labelledby="tabela-titulo">
+      <section class="post" aria-labelledby="pets-titulo">
 
-        <h2 id="tabela-titulo">
-          Exemplo de pets disponíveis
+        <h2 id="pets-titulo">
+          Pets disponíveis para adoção
         </h2>
 
+        <div class="cards">
 
-        <table>
+          <article class="card">
 
-          <caption>
-            Pets aguardando uma família
-          </caption>
+            <img
+              src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80"
+              alt="Mel, cadela disponível para adoção">
 
+            <div class="card-conteudo">
+              <span>Cão</span>
+              <h3>Mel</h3>
+              <p>8 meses</p>
+              <p>Carinhosa e brincalhona.</p>
+            </div>
 
-          <thead>
+          </article>
 
-            <tr>
+          <article class="card">
 
-              <th scope="col">
-                Pet
-              </th>
+            <img
+              src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80"
+              alt="Theo, gato disponível para adoção">
 
-              <th scope="col">
-                Tipo
-              </th>
+            <div class="card-conteudo">
+              <span>Gato</span>
+              <h3>Theo</h3>
+              <p>1 ano</p>
+              <p>Calmo e companheiro.</p>
+            </div>
 
-              <th scope="col">
-                Idade
-              </th>
+          </article>
 
-              <th scope="col">
-                Perfil
-              </th>
+          <article class="card">
 
-            </tr>
+            <img
+              src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80"
+              alt="Luna, cadela disponível para adoção">
 
-          </thead>
+            <div class="card-conteudo">
+              <span>Cão</span>
+              <h3>Luna</h3>
+              <p>2 anos</p>
+              <p>Dócil e tranquila.</p>
+            </div>
 
+          </article>
 
-          <tbody>
+          <article class="card">
 
-            <tr>
+            <img
+              src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80"
+              alt="Max, cachorro disponível para adoção">
 
-              <th scope="row">
-                Mel
-              </th>
+            <div class="card-conteudo">
+              <span>Cão</span>
+              <h3>Max</h3>
+              <p>3 anos</p>
+              <p>Amigável e ativo.</p>
+            </div>
 
-              <td>
-                Cão
-              </td>
+          </article>
 
-              <td>
-                8 meses
-              </td>
+          <article class="card">
 
-              <td>
-                Carinhosa e brincalhona
-              </td>
+            <img
+              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=600&q=80"
+              alt="Nina, gata disponível para adoção">
 
-            </tr>
+            <div class="card-conteudo">
+              <span>Gato</span>
+              <h3>Nina</h3>
+              <p>10 meses</p>
+              <p>Carinhosa e curiosa.</p>
+            </div>
 
+          </article>
 
-            <tr>
+          <article class="card">
 
-              <th scope="row">
-                Theo
-              </th>
+            <img
+              src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=80"
+              alt="Thor, cachorro disponível para adoção">
 
-              <td>
-                Gato
-              </td>
+            <div class="card-conteudo">
+              <span>Cão</span>
+              <h3>Thor</h3>
+              <p>1 ano e 6 meses</p>
+              <p>Brincalhão e dócil.</p>
+            </div>
 
-              <td>
-                1 ano
-              </td>
+          </article>
 
-              <td>
-                Calmo e companheiro
-              </td>
+          <article class="card">
 
-            </tr>
+            <img
+              src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80"
+              alt="Amora, gata disponível para adoção">
 
+            <div class="card-conteudo">
+              <span>Gato</span>
+              <h3>Amora</h3>
+              <p>2 anos</p>
+              <p>Tranquila e carinhosa.</p>
+            </div>
 
-            <tr>
+          </article>
 
-              <th scope="row">
-                Luna
-              </th>
+          <article class="card">
 
-              <td>
-                Cão
-              </td>
+            <img
+              src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80"
+              alt="Bob, cachorro disponível para adoção">
 
-              <td>
-                2 anos
-              </td>
+            <div class="card-conteudo">
+              <span>Cão</span>
+              <h3>Bob</h3>
+              <p>4 anos</p>
+              <p>Companheiro e obediente.</p>
+            </div>
 
-              <td>
-                Dócil e tranquila
-              </td>
+          </article>
 
-            </tr>
-
-          </tbody>
-
-        </table>
+        </div>
 
       </section>
 
@@ -1098,6 +1132,8 @@
         Este site utiliza regiões semânticas para facilitar
         a navegação por tecnologias assistivas.
       </p>
+
+    </aside>
 
   </main>
 

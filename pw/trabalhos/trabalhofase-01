@@ -336,7 +336,7 @@
 
     }
 
-    /* Desktop */
+    /* Para desktop */
 
     @media (min-width: 1024px) {
 
@@ -368,7 +368,7 @@
   <nav aria-label="Navegação principal">
 
     <a href="#como-ajudar">
-      Como Ajudar?
+      Como Ajudar
     </a>
 
     <a href="#faq">
@@ -383,10 +383,6 @@
       Adoção
     </a>
 
-    <a href="#contato">
-      Contato
-    </a>
-
   </nav>
 
   <main class="conteudo">
@@ -396,7 +392,7 @@
       <section id="como-ajudar" class="post">
 
         <h1>
-          Como Ajudar?
+          Como Ajudar
         </h1>
 
         <figure>
@@ -958,10 +954,10 @@
 
               <input
                 type="checkbox"
-                name="contato-whatsapp"
+                name="contato-email"
                 value="sim">
 
-              Aceito receber contato pelo WhatsApp.
+              Aceito receber contato pelo e-mail.
 
             </label>
 
@@ -1122,30 +1118,7 @@
 
     </div>
 
-    <aside aria-labelledby="acessibilidade-titulo">
-
-      <h2 id="acessibilidade-titulo">
-        Acessibilidade
-      </h2>
-
-      <p>
-        Este site utiliza regiões semânticas para facilitar
-        a navegação por tecnologias assistivas.
-      </p>
-
-    </aside>
-
   </main>
-
-  <footer id="contato">
-
-    <p>
-      Pets para Adoção · Belo Horizonte/MG ·
-      Contato:
-      <a href="mailto:mariaisadorabrazmedeiros@gmail.com">
-        mariaisadorabrazmedeiros@gmail.com
-      </a>
-    </p>
 
     <p>
       <a href="#inicio">

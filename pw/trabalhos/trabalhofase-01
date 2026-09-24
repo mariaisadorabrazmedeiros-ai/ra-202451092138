@@ -268,6 +268,57 @@
       margin-bottom: 8px;
     }
 
+    .filtros {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f8fafc;
+      border: 1px solid var(--borda);
+      border-radius: 6px;
+    }
+
+    .filtros label {
+      margin: 0 0 6px;
+    }
+
+    .resultado-busca {
+      font-weight: 600;
+      color: var(--azul);
+    }
+
+    .dados-pet {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .botao-adotar {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: var(--marrom);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .botao-adotar:hover {
+      background: var(--marrom-escuro);
+    }
+
+    .confirmacao {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      background: #e8f5e9;
+      border: 1px solid #81c784;
+      border-radius: 6px;
+      color: #1b5e20;
+      font-weight: 600;
+    }
+
     footer {
       background: #38240D;
       color: var(--branco);
@@ -294,8 +345,6 @@
       font-weight: 700;
     }
 
-    /* Mobile */
-
     main.conteudo {
       flex-direction: column;
       padding: 20px;
@@ -318,7 +367,11 @@
       margin-bottom: 6px;
     }
 
-    /* Tablet */
+    @media (max-width: 700px) {
+      .filtros {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (min-width: 768px) {
 
@@ -335,8 +388,6 @@
       }
 
     }
-
-    /* Para desktop */
 
     @media (min-width: 1024px) {
 
@@ -367,21 +418,11 @@
 
   <nav aria-label="Navegação principal">
 
-    <a href="#como-ajudar">
-      Como Ajudar
-    </a>
-
-    <a href="#faq">
-      FAQ
-    </a>
-
-    <a href="#sobre-o-site">
-      Sobre o Site
-    </a>
-
-    <a href="#adocao">
-      Adoção
-    </a>
+    <a href="#como-ajudar">Como Ajudar</a>
+    <a href="#faq">FAQ</a>
+    <a href="#sobre-o-site">Sobre o Site</a>
+    <a href="#adocao">Adoção</a>
+    <a href="#pets-titulo">Pets</a>
 
   </nav>
 
@@ -391,9 +432,7 @@
 
       <section id="como-ajudar" class="post">
 
-        <h1>
-          Como Ajudar
-        </h1>
+        <h1>Como Ajudar</h1>
 
         <figure>
 
@@ -410,9 +449,7 @@
 
         </figure>
 
-        <h2>
-          Toda ajuda pode transformar uma vida
-        </h2>
+        <h2>Toda ajuda pode transformar uma vida</h2>
 
         <p>
           Existem diversas maneiras de contribuir para que cães
@@ -421,9 +458,7 @@
           momento, ainda pode fazer a diferença.
         </p>
 
-        <h2>
-          Adote com responsabilidade
-        </h2>
+        <h2>Adote com responsabilidade</h2>
 
         <p>
           Ao adotar, você oferece uma nova oportunidade para
@@ -436,9 +471,7 @@
           a vida dele.
         </p>
 
-        <h2>
-          Ofereça um lar temporário
-        </h2>
+        <h2>Ofereça um lar temporário</h2>
 
         <p>
           O lar temporário acolhe o animal por um período
@@ -447,13 +480,9 @@
           ao pet durante o processo de adoção.
         </p>
 
-        <h2>
-          Faça uma doação
-        </h2>
+        <h2>Faça uma doação</h2>
 
-        <p>
-          As doações podem ajudar na compra de:
-        </p>
+        <p>As doações podem ajudar na compra de:</p>
 
         <ul>
           <li>Ração</li>
@@ -487,9 +516,7 @@
           Seg. a sex., 9h às 17h
         </p>
 
-        <h2>
-          Seja voluntário
-        </h2>
+        <h2>Seja voluntário</h2>
 
         <p>
           Você também pode colaborar oferecendo seu tempo
@@ -507,9 +534,7 @@
           <li>Apoio nos cuidados diários</li>
         </ul>
 
-        <h2>
-          Compartilhe
-        </h2>
+        <h2>Compartilhe</h2>
 
         <p>
           Divulgar os perfis dos animais disponíveis aumenta
@@ -526,22 +551,16 @@
 
       <section id="faq" class="post">
 
-        <h1>
-          FAQ
-        </h1>
+        <h1>FAQ</h1>
 
-        <h2>
-          Perguntas frequentes
-        </h2>
+        <h2>Perguntas frequentes</h2>
 
         <p>
           Encontre respostas para as principais dúvidas sobre
           adoção, cuidados e funcionamento do site.
         </p>
 
-        <h2>
-          Como posso adotar um animal?
-        </h2>
+        <h2>Como posso adotar um animal?</h2>
 
         <p>
           Acesse a página de animais disponíveis, escolha o pet
@@ -549,9 +568,7 @@
           informado em seu perfil.
         </p>
 
-        <h2>
-          Quais são os requisitos para adotar?
-        </h2>
+        <h2>Quais são os requisitos para adotar?</h2>
 
         <p>
           Os requisitos podem variar. Geralmente, o interessado
@@ -560,9 +577,7 @@
           cuidados veterinários, segurança e atenção.
         </p>
 
-        <h2>
-          A adoção é gratuita?
-        </h2>
+        <h2>A adoção é gratuita?</h2>
 
         <p>
           Normalmente, a adoção não envolve a compra do animal.
@@ -570,9 +585,7 @@
           de alimentação, vacinação, higiene e cuidados veterinários.
         </p>
 
-        <h2>
-          Posso conhecer o pet antes de adotar?
-        </h2>
+        <h2>Posso conhecer o pet antes de adotar?</h2>
 
         <p>
           Sim. Sempre que possível, é importante conhecer o animal
@@ -580,9 +593,7 @@
           e suas necessidades.
         </p>
 
-        <h2>
-          Os animais são vacinados e castrados?
-        </h2>
+        <h2>Os animais são vacinados e castrados?</h2>
 
         <p>
           Essa informação varia de acordo com cada pet.
@@ -590,9 +601,7 @@
           com os responsáveis.
         </p>
 
-        <h2>
-          Posso adotar se já tenho outros animais?
-        </h2>
+        <h2>Posso adotar se já tenho outros animais?</h2>
 
         <p>
           Sim, desde que seja possível realizar uma adaptação
@@ -600,9 +609,7 @@
           já possui outros animais.
         </p>
 
-        <h2>
-          Posso adotar um animal para outra pessoa?
-        </h2>
+        <h2>Posso adotar um animal para outra pessoa?</h2>
 
         <p>
           A adoção deve ser realizada pela pessoa que será
@@ -610,27 +617,21 @@
           como presentes ou surpresas.
         </p>
 
-        <h2>
-          O que acontece se eu não puder mais cuidar do animal?
-        </h2>
+        <h2>O que acontece se eu não puder mais cuidar do animal?</h2>
 
         <p>
           Entre em contato com os responsáveis pela adoção antes
           de entregar o animal a outra pessoa ou abandoná-lo.
         </p>
 
-        <h2>
-          Como posso ajudar sem adotar?
-        </h2>
+        <h2>Como posso ajudar sem adotar?</h2>
 
         <p>
           Você pode divulgar os animais, oferecer lar temporário,
           doar materiais, participar de campanhas ou atuar como voluntário.
         </p>
 
-        <h2>
-          Encontrei um animal abandonado. O que devo fazer?
-        </h2>
+        <h2>Encontrei um animal abandonado. O que devo fazer?</h2>
 
         <p>
           Se for seguro, ofereça água e mantenha o animal protegido
@@ -638,9 +639,7 @@
           ou organizações de proteção animal.
         </p>
 
-        <h2>
-          As informações dos animais são atualizadas?
-        </h2>
+        <h2>As informações dos animais são atualizadas?</h2>
 
         <p>
           O site busca manter os perfis atualizados, mas um animal
@@ -652,13 +651,9 @@
 
       <section id="sobre-o-site" class="post">
 
-        <h1>
-          Sobre o Site
-        </h1>
+        <h1>Sobre o Site</h1>
 
-        <h2>
-          Sobre o projeto
-        </h2>
+        <h2>Sobre o projeto</h2>
 
         <p>
           Este site foi criado para dar visibilidade a cães e gatos
@@ -673,61 +668,31 @@
           saúde e necessidades especiais.
         </p>
 
-        <h2>
-          Nossa missão
-        </h2>
+        <h2>Nossa missão</h2>
 
         <p>
           Promover a adoção responsável e contribuir para que mais
           animais tenham acesso a cuidado, proteção e qualidade de vida.
         </p>
 
-        <h2>
-          Nossa visão
-        </h2>
+        <h2>Nossa visão</h2>
 
         <p>
           Ser um espaço confiável e acessível para a divulgação
           de animais disponíveis para adoção.
         </p>
 
-        <h2>
-          Nossos valores
-        </h2>
+        <h2>Nossos valores</h2>
 
         <ul>
-
-          <li>
-            <strong>Respeito:</strong>
-            todos os animais merecem cuidado e proteção.
-          </li>
-
-          <li>
-            <strong>Responsabilidade:</strong>
-            adotar é assumir um compromisso para toda a vida.
-          </li>
-
-          <li>
-            <strong>Transparência:</strong>
-            as informações devem ser apresentadas de maneira clara.
-          </li>
-
-          <li>
-            <strong>Empatia:</strong>
-            cada animal possui uma história e necessidades específicas.
-          </li>
-
-          <li>
-            <strong>Colaboração:</strong>
-            famílias, voluntários e organizações podem transformar
-            vidas juntos.
-          </li>
-
+          <li><strong>Respeito:</strong> todos os animais merecem cuidado e proteção.</li>
+          <li><strong>Responsabilidade:</strong> adotar é assumir um compromisso para toda a vida.</li>
+          <li><strong>Transparência:</strong> as informações devem ser apresentadas de maneira clara.</li>
+          <li><strong>Empatia:</strong> cada animal possui uma história e necessidades específicas.</li>
+          <li><strong>Colaboração:</strong> famílias, voluntários e organizações podem transformar vidas juntos.</li>
         </ul>
 
-        <h2>
-          Como o site funciona?
-        </h2>
+        <h2>Como o site funciona?</h2>
 
         <ul>
           <li>Os animais disponíveis são cadastrados com fotos e informações.</li>
@@ -737,9 +702,7 @@
           <li>Após a aprovação, o animal é encaminhado para sua nova família.</li>
         </ul>
 
-        <h2>
-          Adoção responsável
-        </h2>
+        <h2>Adoção responsável</h2>
 
         <p>
           A adoção deve ser uma decisão consciente. Antes de adotar,
@@ -747,9 +710,7 @@
           o tempo necessário e as possíveis mudanças na rotina da família.
         </p>
 
-        <h2>
-          Importante
-        </h2>
+        <h2>Importante</h2>
 
         <p>
           O site atua como um canal de divulgação e aproximação.
@@ -763,9 +724,7 @@
           verificar a identidade e a legitimidade dos envolvidos.
         </p>
 
-        <h2>
-          Juntos podemos transformar vidas
-        </h2>
+        <h2>Juntos podemos transformar vidas</h2>
 
         <p>
           Cada adoção representa uma nova oportunidade.
@@ -777,9 +736,7 @@
 
       <section id="adocao" class="post">
 
-        <h1>
-          Quero ajudar na adoção
-        </h1>
+        <h1>Quero ajudar na adoção</h1>
 
         <p>
           Preencha o formulário abaixo para demonstrar interesse
@@ -790,13 +747,9 @@
 
           <fieldset>
 
-            <legend>
-              Dados para contato
-            </legend>
+            <legend>Dados para contato</legend>
 
-            <label for="nome">
-              Nome completo
-            </label>
+            <label for="nome">Nome completo</label>
 
             <input
               type="text"
@@ -808,9 +761,7 @@
               pattern="[A-Za-zÀ-ÿ ]{3,80}"
               autocomplete="name">
 
-            <label for="email">
-              E-mail
-            </label>
+            <label for="email">E-mail</label>
 
             <input
               type="email"
@@ -821,9 +772,7 @@
               maxlength="120"
               autocomplete="email">
 
-            <label for="telefone">
-              Telefone
-            </label>
+            <label for="telefone">Telefone</label>
 
             <input
               type="tel"
@@ -835,9 +784,7 @@
               pattern="[0-9() +\-]{10,15}"
               autocomplete="tel">
 
-            <label for="idade">
-              Idade
-            </label>
+            <label for="idade">Idade</label>
 
             <input
               type="number"
@@ -847,9 +794,7 @@
               min="18"
               max="100">
 
-            <label for="data">
-              Data de disponibilidade
-            </label>
+            <label for="data">Data de disponibilidade</label>
 
             <input
               type="date"
@@ -857,9 +802,7 @@
               name="data"
               required>
 
-            <label for="cidade">
-              Cidade
-            </label>
+            <label for="cidade">Cidade</label>
 
             <input
               type="text"
@@ -873,38 +816,41 @@
 
           <fieldset>
 
-            <legend>
-              Interesse
-            </legend>
+            <legend>Interesse</legend>
 
-            <label for="tipo-ajuda">
-              Como deseja ajudar?
-            </label>
+            <label for="tipo-ajuda">Como deseja ajudar?</label>
 
             <select
               id="tipo-ajuda"
               name="tipo-ajuda"
               required>
 
-              <option value="">
-                Selecione uma opção
-              </option>
+              <option value="">Selecione uma opção</option>
+              <option value="adocao">Adotar um pet</option>
+              <option value="lar-temporario">Oferecer lar temporário</option>
+              <option value="voluntario">Ser voluntário</option>
+              <option value="doacao">Fazer uma doação</option>
 
-              <option value="adocao">
-                Adotar um pet
-              </option>
+            </select>
 
-              <option value="lar-temporario">
-                Oferecer lar temporário
-              </option>
+            <label for="pet-desejado">
+              Nome do pet desejado
+            </label>
 
-              <option value="voluntario">
-                Ser voluntário
-              </option>
+            <select
+              id="pet-desejado"
+              name="pet-desejado"
+              required>
 
-              <option value="doacao">
-                Fazer uma doação
-              </option>
+              <option value="">Selecione um pet</option>
+              <option value="Mel">Mel</option>
+              <option value="Theo">Theo</option>
+              <option value="Luna">Luna</option>
+              <option value="Max">Max</option>
+              <option value="Nina">Nina</option>
+              <option value="Thor">Thor</option>
+              <option value="Amora">Amora</option>
+              <option value="Bob">Bob</option>
 
             </select>
 
@@ -915,37 +861,28 @@
             <div class="opcoes">
 
               <label>
-
                 <input
                   type="radio"
                   name="animal"
                   value="cao"
                   required>
-
                 Cão
-
               </label>
 
               <label>
-
                 <input
                   type="radio"
                   name="animal"
                   value="gato">
-
                 Gato
-
               </label>
 
               <label>
-
                 <input
                   type="radio"
                   name="animal"
                   value="qualquer">
-
                 Qualquer um
-
               </label>
 
             </div>
@@ -962,7 +899,7 @@
             </label>
 
             <label for="mensagem">
-              Mensagem
+              Motivo da adoção
             </label>
 
             <textarea
@@ -970,15 +907,19 @@
               name="mensagem"
               rows="5"
               required
-              minlength="10"
+              minlength="20"
               maxlength="500"
-              placeholder="Conte um pouco sobre o tipo de ajuda que deseja oferecer."></textarea>
+              placeholder="Conte por que deseja adotar este pet."></textarea>
 
           </fieldset>
 
           <button type="submit">
             Enviar interesse
           </button>
+
+          <div id="confirmacao" class="confirmacao" aria-live="polite">
+            Interesse enviado com sucesso! Em breve entraremos em contato.
+          </div>
 
         </form>
 
@@ -990,124 +931,381 @@
           Pets disponíveis para adoção
         </h2>
 
+        <div class="filtros">
+
+          <div>
+            <label for="busca">Buscar por nome</label>
+            <input
+              type="search"
+              id="busca"
+              placeholder="Digite o nome do pet">
+          </div>
+
+          <div>
+            <label for="filtro-especie">Espécie</label>
+
+            <select id="filtro-especie">
+              <option value="">Todas</option>
+              <option value="Cão">Cão</option>
+              <option value="Gato">Gato</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="filtro-porte">Porte</label>
+
+            <select id="filtro-porte">
+              <option value="">Todos</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="filtro-idade">Faixa etária</label>
+
+            <select id="filtro-idade">
+              <option value="">Todas</option>
+              <option value="Filhote">Filhote</option>
+              <option value="Jovem">Jovem</option>
+              <option value="Adulto">Adulto</option>
+              <option value="Idoso">Idoso</option>
+            </select>
+          </div>
+
+        </div>
+
+        <p id="resultado-busca" class="resultado-busca" aria-live="polite">
+          8 pets encontrados.
+        </p>
+
         <div class="cards">
 
-          <article class="card">
+          <article class="card"
+            data-nome="Mel"
+            data-especie="Cão"
+            data-porte="Médio"
+            data-idade="Jovem">
 
             <img
               src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80"
               alt="Mel, cadela disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Cão</span>
+
               <h3>Mel</h3>
+
               <p>8 meses</p>
+
               <p>Carinhosa e brincalhona.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 001<br>
+                <strong>Porte:</strong> Médio<br>
+                <strong>Sexo:</strong> Fêmea<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Jovem<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Mel">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Theo"
+            data-especie="Gato"
+            data-porte="Pequeno"
+            data-idade="Jovem">
 
             <img
               src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80"
               alt="Theo, gato disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Gato</span>
+
               <h3>Theo</h3>
+
               <p>1 ano</p>
+
               <p>Calmo e companheiro.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 002<br>
+                <strong>Porte:</strong> Pequeno<br>
+                <strong>Sexo:</strong> Macho<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Jovem<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Theo">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Luna"
+            data-especie="Cão"
+            data-porte="Médio"
+            data-idade="Adulto">
 
             <img
               src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80"
               alt="Luna, cadela disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Cão</span>
+
               <h3>Luna</h3>
+
               <p>2 anos</p>
+
               <p>Dócil e tranquila.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 003<br>
+                <strong>Porte:</strong> Médio<br>
+                <strong>Sexo:</strong> Fêmea<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Adulto<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Luna">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Max"
+            data-especie="Cão"
+            data-porte="Grande"
+            data-idade="Adulto">
 
             <img
               src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80"
               alt="Max, cachorro disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Cão</span>
+
               <h3>Max</h3>
+
               <p>3 anos</p>
+
               <p>Amigável e ativo.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 004<br>
+                <strong>Porte:</strong> Grande<br>
+                <strong>Sexo:</strong> Macho<br>
+                <strong>Raça:</strong> Labrador<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Adulto<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Max">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Nina"
+            data-especie="Gato"
+            data-porte="Pequeno"
+            data-idade="Jovem">
 
             <img
               src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=600&q=80"
               alt="Nina, gata disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Gato</span>
+
               <h3>Nina</h3>
+
               <p>10 meses</p>
+
               <p>Carinhosa e curiosa.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 005<br>
+                <strong>Porte:</strong> Pequeno<br>
+                <strong>Sexo:</strong> Fêmea<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Jovem<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Nina">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Thor"
+            data-especie="Cão"
+            data-porte="Grande"
+            data-idade="Jovem">
 
             <img
               src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=80"
               alt="Thor, cachorro disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Cão</span>
+
               <h3>Thor</h3>
+
               <p>1 ano e 6 meses</p>
+
               <p>Brincalhão e dócil.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 006<br>
+                <strong>Porte:</strong> Grande<br>
+                <strong>Sexo:</strong> Macho<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Jovem<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Thor">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Amora"
+            data-especie="Gato"
+            data-porte="Pequeno"
+            data-idade="Adulto">
 
             <img
               src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80"
               alt="Amora, gata disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Gato</span>
+
               <h3>Amora</h3>
+
               <p>2 anos</p>
+
               <p>Tranquila e carinhosa.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 007<br>
+                <strong>Porte:</strong> Pequeno<br>
+                <strong>Sexo:</strong> Fêmea<br>
+                <strong>Raça:</strong> SRD<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Adulto<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Amora">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
 
-          <article class="card">
+          <article class="card"
+            data-nome="Bob"
+            data-especie="Cão"
+            data-porte="Médio"
+            data-idade="Adulto">
 
             <img
               src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80"
               alt="Bob, cachorro disponível para adoção">
 
             <div class="card-conteudo">
+
               <span>Cão</span>
+
               <h3>Bob</h3>
+
               <p>4 anos</p>
+
               <p>Companheiro e obediente.</p>
+
+              <div class="dados-pet">
+                <strong>ID:</strong> 008<br>
+                <strong>Porte:</strong> Médio<br>
+                <strong>Sexo:</strong> Macho<br>
+                <strong>Raça:</strong> Beagle<br>
+                <strong>Cidade:</strong> Belo Horizonte/MG<br>
+                <strong>Faixa etária:</strong> Adulto<br>
+                <strong>Status:</strong> Disponível
+              </div>
+
+              <a
+                class="botao-adotar"
+                href="#adocao"
+                data-pet="Bob">
+                Quero adotar
+              </a>
+
             </div>
 
           </article>
@@ -1120,13 +1318,133 @@
 
   </main>
 
+  <footer>
+
     <p>
       <a href="#inicio">
         Voltar ao início
       </a>
     </p>
 
+    <p>
+      Pets para Adoção - Encontre seu novo melhor amigo
+    </p>
+
   </footer>
+
+  <script>
+
+    const busca = document.getElementById("busca");
+    const especie = document.getElementById("filtro-especie");
+    const porte = document.getElementById("filtro-porte");
+    const idade = document.getElementById("filtro-idade");
+
+    const cards = document.querySelectorAll(".card");
+
+    const resultado = document.getElementById("resultado-busca");
+
+    const pet = document.getElementById("pet-desejado");
+
+    const form = document.querySelector("#adocao form");
+
+    const confirmacao = document.getElementById("confirmacao");
+
+
+    function filtrarPets() {
+
+      let quantidade = 0;
+
+      const nome = busca.value.toLowerCase().trim();
+
+      cards.forEach(function(card) {
+
+        const nomePet = card.dataset.nome.toLowerCase();
+
+        const especiePet = card.dataset.especie;
+        const portePet = card.dataset.porte;
+        const idadePet = card.dataset.idade;
+
+        const encontrouNome = nomePet.includes(nome);
+
+        const encontrouEspecie =
+          !especie.value ||
+          especiePet === especie.value;
+
+        const encontrouPorte =
+          !porte.value ||
+          portePet === porte.value;
+
+        const encontrouIdade =
+          !idade.value ||
+          idadePet === idade.value;
+
+        const mostrar =
+          encontrouNome &&
+          encontrouEspecie &&
+          encontrouPorte &&
+          encontrouIdade;
+
+        card.style.display = mostrar ? "" : "none";
+
+        if (mostrar) {
+          quantidade++;
+        }
+
+      });
+
+      resultado.textContent =
+        quantidade +
+        (quantidade === 1
+          ? " pet encontrado."
+          : " pets encontrados.");
+
+    }
+
+
+    busca.addEventListener("input", filtrarPets);
+
+    especie.addEventListener("change", filtrarPets);
+
+    porte.addEventListener("change", filtrarPets);
+
+    idade.addEventListener("change", filtrarPets);
+
+
+    document.querySelectorAll(".botao-adotar").forEach(function(botao) {
+
+      botao.addEventListener("click", function() {
+
+        pet.value = botao.dataset.pet;
+
+      });
+
+    });
+
+
+    form.addEventListener("submit", function(evento) {
+
+      evento.preventDefault();
+
+      if (!form.checkValidity()) {
+
+        form.reportValidity();
+
+        return;
+
+      }
+
+      confirmacao.style.display = "block";
+
+      confirmacao.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      form.reset();
+
+    });
+
+  </script>
 
 </body>
 

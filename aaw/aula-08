@@ -1,0 +1,37 @@
+GRUPO 05    OAuth 2.0: os quatro papéis
+MISSÃO DO GRUPO
+Explicar como um app ganha acesso LIMITADO aos seus dados em outro serviço sem nunca receber a sua senha.
+TEXTO-BASE
+O problema: o NovoApp quer ler a sua agenda do Google. O jeito ingênuo é você entregar sua senha do Google ao NovoApp, que passa a poder TUDO, para sempre, e você não consegue revogar sem trocar a senha.
+OAuth 2.0 (RFC 6749) é um framework de autorização delegada: você autoriza o app a fazer algo específico, por tempo limitado, e a senha fica só com o Google. O app recebe um access token, não a senha.
+Escopo (scope) é o que o token permite, por exemplo calendar.readonly. Consentimento é a tela “NovoApp quer: ver sua agenda”. Você pode revogar o acesso depois, nas configurações da conta.
+O app é registrado no provedor e recebe um client_id (público), uma redirect_uri cadastrada e, se roda em servidor, um client_secret.
+•	Resource Owner: VOCÊ, dono dos dados.
+•	Client: o app que quer acesso (o NovoApp).
+•	Authorization Server: quem autentica você, mostra o consentimento e emite os tokens (o servidor de contas do Google).
+•	Resource Server: a API que guarda os dados e aceita o access token (a API do Google Agenda).
+
+ 1  GET /calendar/v3/events
+ 2  Authorization: Bearer <access_token com scope calendar.readonly>
+A APRESENTAÇÃO DE VOCÊS DEVE RESPONDER
+1. No caso NovoApp + Google Agenda, quem é cada um dos 4 papéis?
+
+
+2. O que são escopo e consentimento? Por que eles importam?
+
+
+3. Que problemas de “dar a senha para o app” o OAuth resolve?
+
+
+4. Expliquem com a analogia da “chave de manobrista” (abaixo).
+
+
+PERGUNTA-DESAFIO PARA A TURMA (último minuto)
+Um app de impressão de fotos pede acesso ao seu Google Fotos. Quem é o Resource Owner, o Client, o Authorization Server e o Resource Server? Que escopo faz sentido pedir?
+ROTEIRO SUGERIDO (6 min + 1 min de desafio)
+•	1 min: abram com a analogia ou com uma situação do dia a dia.
+•	3 min: o conceito, desenhado no quadro (esquema, fluxo ou tabela).
+•	2 min: um exemplo concreto (código, token, requisição HTTP ou cenário).
+•	1 min: lancem a pergunta-desafio para a turma e ouçam as respostas.
+DICA
+Analogia: a chave de manobrista (valet key) liga o carro, mas não abre o porta-malas nem o porta-luvas. O dono entrega acesso limitado sem entregar a chave principal.

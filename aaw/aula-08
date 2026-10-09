@@ -15,16 +15,58 @@ O app é registrado no provedor e recebe um client_id (público), uma redirect_u
  2  Authorization: Bearer <access_token com scope calendar.readonly>
 A APRESENTAÇÃO DE VOCÊS DEVE RESPONDER
 1. No caso NovoApp + Google Agenda, quem é cada um dos 4 papéis?
+Resource Owner: o usuário, dono da agenda.
 
+Client: o NovoApp.
+
+Authorization Server: o servidor de autorização e contas do Google.
+
+Resource Server: a API do Google Agenda.
 
 2. O que são escopo e consentimento? Por que eles importam?
+O escopo (scope) define as permissões que uma aplicação solicita de um usuário para acessar seus recursos protegidos. É um conceito fundamental no OAuth 2.0 que controla o nível de acesso que uma aplicação pode ter aos dados de um usuário.
+ 
+Ele define as permissões que a aplicação está solicitando do usuário.
 
+Os escopos (scopes) são representados como strings definidas pelo servidor de autorização.  Quando uma aplicação solicita acesso aos recursos de um usuário, ela especifica os escopos (scopes) necessários na solicitação de autorização. O usuário é então solicitado a conceder ou negar essas permissões durante o processo de autorização.
+
+Quando uma aplicação inicia o processo de autorização OAuth 2.0, ela inclui uma lista de escopos (scopes) na solicitação de autorização. O servidor de autorização então apresenta ao usuário uma tela de consentimento que lista os escopos (scopes) solicitados. 
+
+O usuário pode escolher conceder ou negar acesso a cada escopo (scope). Este processo é tipicamente usado quando a aplicação é uma aplicação de terceiros que requer acesso aos recursos do usuário.
+
+Alternativamente, se a aplicação for confiável pelo servidor de autorização, o usuário pode não ser solicitado a dar consentimento, em vez disso, ocorre um consentimento automático e todos os escopos (scopes) solicitados são concedidos.
+
+Os escopos (scopes) são tipicamente definidos pelo provedor de API. Eles podem ser:
+
+Escopos padrão: Escopos (scopes) comumente usados definidos pela especificação OAuth 2.0, compartilhados por diferentes aplicações e serviços. Ex.: openid, profile, email.
+Escopos personalizados: Específicos para uma aplicação ou serviço, adaptados aos seus requisitos únicos. Ex.: read:orders, write:comments.
+
+Motivos para usar->
+
+Controle de acesso granular: Os escopos (scopes) permitem que as aplicações solicitem apenas as permissões necessárias para realizar ações específicas, reduzindo o risco de acesso não autorizado.
+Consentimento do usuário: Os escopos (scopes) ajudam os usuários a entender quais dados a aplicação acessará e por quê.
+Segurança: Os escopos (scopes) ajudam a evitar que as aplicações excedam suas permissões de acesso, aumentando a segurança dos dados do usuário.
+
+Como explicado  OAuth permite que aplicativos acessem APIs em nome do usuário.
+
+O consentimento é quando o usuário vê quais permissões o aplicativo está solicitando e decide se deseja permitir ou negar o acesso.
+Por exemplo, o Google informa: “O NovoApp quer visualizar sua agenda.” Se o usuário aceitar, o aplicativo recebe um acesso limitado, sem receber a senha.
+O escopo define o que o app está pedindo; o consentimento é a decisão do usuário de autorizar ou não.
+Essa autorização pode ser revogada depois, mantendo o usuário no controle de seus dados.
+O consentimento é importante porque:
+Protege a privacidade: o usuário sabe quais dados serão acessados.
+Garante controle: ele pode permitir, negar ou revogar o acesso.
+Limita as permissões: o aplicativo acessa somente o necessário.
+Aumenta a segurança: a senha não é compartilhada com o aplicativo.
+Oferece transparência: mostra quem está pedindo acesso e para qual finalidade.
+Resumindo: usamos o consentimento para que o usuário tenha conhecimento e controle sobre o acesso aos seus dados.
 
 3. Que problemas de “dar a senha para o app” o OAuth resolve?
-
+ O OAuth evita que o aplicativo receba e armazene a senha do usuário. Também permite limitar permissões, definir duração para o acesso e revogar somente um aplicativo, sem precisar trocar a senha da conta
 
 4. Expliquem com a analogia da “chave de manobrista” (abaixo).
 
+O token é como uma chave de manobrista. Ele permite executar somente determinadas ações, sem fornecer a chave principal. O escopo define o que a chave abre, e o usuário pode retirar essa chave quando quiser.
 
 PERGUNTA-DESAFIO PARA A TURMA (último minuto)
 Um app de impressão de fotos pede acesso ao seu Google Fotos. Quem é o Resource Owner, o Client, o Authorization Server e o Resource Server? Que escopo faz sentido pedir?

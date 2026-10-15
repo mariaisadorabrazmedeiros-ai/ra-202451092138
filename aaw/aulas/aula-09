@@ -14,7 +14,7 @@ Vocês são o time de segurança contratado para definir QUEM pode fazer O QUÊ 
 
 *⏱️ Tempo: 25 minutos  |  👥 Formato: em duplas  |  Regra de ouro: na dúvida, NEGUE o acesso.*
 
-> **Nomes:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nomes:** Maria Isadora Braz Medeiros   **Turma:** 3001   **Data:** 15 / 10 / 2026
 
 ## PARTE 01 — A matriz papel × permissão
 
@@ -22,16 +22,16 @@ Marquem ✓ (pode) ou ✗ (não pode) em cada célula:
 
 | **Ação** | **Aluno** | **Professor** | **Coordenador** | **Secretaria** |
 | --- | --- | --- | --- | --- |
-| 1. Ver as próprias notas |  |  |  |  |
-| 2. Ver notas de toda a turma |  |  |  |  |
-| 3. Lançar nota |  |  |  |  |
-| 4. Alterar nota já lançada |  |  |  |  |
-| 5. Matricular aluno em disciplina |  |  |  |  |
-| 6. Trancar matrícula |  |  |  |  |
-| 7. Criar nova disciplina |  |  |  |  |
-| 8. Ver dados pessoais de aluno |  |  |  |  |
-| 9. Emitir histórico escolar |  |  |  |  |
-| 10. Aprovar colação de grau |  |  |  |  |
+| 1. Ver as próprias notas |✓  | ✓ |✓  |✓  |
+| 2. Ver notas de toda a turma |✗  |✓  |✓  |✗  |
+| 3. Lançar nota |✗  | ✓ |✗  |✗  |
+| 4. Alterar nota já lançada |✗  | ✓ |✗  |✗  |
+| 5. Matricular aluno em disciplina |✗  |✗  |✓  |✓  |
+| 6. Trancar matrícula | ✗ |✗  |✓  |✓  |
+| 7. Criar nova disciplina | ✗ |✗  |✓  |  |
+| 8. Ver dados pessoais de aluno | ✗ |✗  |✓  | ✓ |
+| 9. Emitir histórico escolar |✗  |✗  |✓  |✓  |
+| 10. Aprovar colação de grau | ✗ |✗  |✓ | ✗ |
 
 *Dica: pensem em consequências — quem responde perante o MEC se uma nota for alterada indevidamente? E perante a LGPD se dados pessoais vazarem?*
 
@@ -39,22 +39,24 @@ Marquem ✓ (pode) ou ✗ (não pode) em cada célula:
 
 Quais 3 células geraram mais discussão na dupla? Anotem a célula (ação + papel) e a justificativa da decisão final:
 
-1. Caso 1:
+1. Caso 1: O professor pode alterar notas das disciplinas que leciona, mas o sistema deve registrar a alteração para evitar fraudes.
 
-2. Caso 2:
+2. Caso 2: O coordenador pode consultar esses dados quando necessário para suas funções, respeitando a LGPD e a privacidade dos alunos.
 
-3. Caso 3:
+3. Caso 3: A secretaria não pode aprovar a colação sozinha, pois essa decisão deve ser responsabilidade da coordenação ou da autoridade acadêmica definida pela faculdade.
 
 ## PARTE 03 — A pergunta-armadilha
 
 Vocês marcaram que Professor pode “lançar nota”. Mas… de QUALQUER turma? O professor de Cálculo pode lançar nota na turma de Arquitetura de Aplicações Web?
 
 1. O papel “Professor” sozinho é suficiente para decidir esse acesso? Por quê?
+Não. É necessário saber se o professor é responsável pela disciplina ou turma em questão.
 
 2. Que informação ALÉM do papel o sistema precisa conhecer para decidir corretamente?
+Precisa conhecer a disciplina, a turma e se o professor está vinculado a elas.
 
 3. Onde vocês já viram esse mesmo problema nesta disciplina? (dica: Aula 07…)
-
+Na Aula 07, no controle de acesso baseado em atributos e no contexto da solicitação, além dos papéis dos usuários.
 ## DESAFIO
 
 1. Chegou um pedido da coordenação: criar o papel “Monitor” — um aluno que ajuda o professor em uma disciplina. Que permissões vocês dariam ao Monitor? Que risco novo esse papel cria?

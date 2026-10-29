@@ -13,7 +13,7 @@ Vocês receberam o contrato OpenAPI de uma API que NUNCA viram — e nada mais: 
 
 *⏱️ Tempo: 30 minutos  |  👥 Formato: em duplas  |  Só vale usar o que está impresso neste handout.*
 
-> **Nomes:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nomes:** Maria Isadora Braz Medeiros   **Turma:** 3001   **Data:** 29 / 10 / 2026
 
 ## CARD 01 — O contrato — especificação OpenAPI (YAML)
 
@@ -70,13 +70,29 @@ components:
 Respondam usando SOMENTE o Card 1:
 
 1. Que endpoints/operações existem e o que cada um faz?
+GET: lista os livros de forma paginada.
+POST: cadastra um novo livro.
 
 2. Quais campos são OBRIGATÓRIOS para cadastrar um livro? Que restrições os campos têm?
+Título: obrigatório, texto de até 120 caracteres.
+Autor: obrigatório, texto.
+Ano: opcional, número inteiro maior ou igual a 1450.
 
 3. Em que situações a API devolve 400? E 401? Qual operação exige token — e de que tipo?
+400: campos inválidos.
+401: token ausente ou inválido.
+A operação POST exige token Bearer JWT.
 
 4. Montem a requisição POST completa no papel (método, URL, headers, body JSON válido):
+POST https://api.biblioteca.newton.br/api/v1/livros
+Authorization: Bearer SEU_TOKEN_JWT
+Content-Type: application/json
 
+{
+  "titulo": "Dom Casmurro",
+  "autor": "Machado de Assis",
+  "ano": 1899
+}
 ## CARD 03 — A mesma API, documentada “em prosa”
 
 Versão que o parceiro tinha antes de adotar OpenAPI:
@@ -84,7 +100,11 @@ Versão que o parceiro tinha antes de adotar OpenAPI:
 *“Para cadastrar um livro, envie os dados do livro para o endpoint de livros. É preciso estar autenticado. Os campos incluem título, autor e ano. Em caso de erro, a API retorna uma mensagem apropriada. Também é possível listar os livros cadastrados.”*
 
 1. Listem 3 informações que vocês usaram no Card 2 e que esta prosa NÃO responde com precisão:
+O título pode ter no máximo 120 caracteres.
+O ano deve ser maior ou igual a 1450.
+A autenticação exige um token Bearer JWT.
 
 ## DESAFIO
 
 1. Mesmo com a spec em mãos, que pergunta a dupla AINDA precisaria fazer ao time da API? (Dica: o contrato diz o que a API promete — não diz tudo sobre como ela se comporta.)
+Qual é o formato do conteúdo retornado quando um livro é cadastrado com sucesso?
